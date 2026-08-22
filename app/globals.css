@@ -1,26 +1,183 @@
 @import "tailwindcss";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+/* ========================================
+   ROOT VARIABLES
+   ======================================== */
 
 :root {
+  /* Colors */
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary: #1e3872;
+  --dark-primary: #0f1e48;
+  --light-primary: #6b8fd4;
+
+  --secondary: #e09428;
+  --dark-secondary: #e09428;
+  --light-secondary: #f0a530;
+
+  --text-primary: #2d3230;
+  --text-secondary: #2d3230;
+  --text-tertiary: #5a6260;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --grey: #2d3230;
+  --dark-grey: #2d3230;
+  --light-grey: #5a6260;
+
+  /* Fonts */
+  --font-primary: "Plus Jakarta Sans Variable", sans-serif;
+  --font-secondary: "Instrument Serif", Georgia, serif;
+  --font-mono-family: "Plus Jakarta Mono Variable", monospace;
+
+  /* Large Layout */
+  --left-margin: 316px;
+  --right-margin: 316px;
+
+  --left-padding: 316px;
+  --right-padding: 316px;
+
+  /* Desktop */
+  --desk-left-margin: 32px;
+  --desk-right-margin: 32px;
+
+  /* Tablet */
+  --tablet-left-margin: 32px;
+  --tablet-right-margin: 32px;
+
+  /* Mobile */
+  --mobile-left-margin: 32px;
+  --mobile-right-margin: 32px;
+
+  /* Layout Spacing */
+  --layout-padding-xs: 4px;
+  --layout-padding-sm: 8px;
+  --layout-padding-md: 16px;
+  --layout-padding-lg: 32px;
+  --layout-padding-xl: 48px;
+  --layout-padding-xxl: 64px;
 }
+
+/* ========================================
+   TAILWIND CSS v4 THEME
+   ======================================== */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-primary);
+  --font-serif: var(--font-secondary);
+  --font-mono: var(--font-mono-family);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================================
+   BASE
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+input,
+textarea,
+select {
+  color: var(--black);
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
+/* ========================================
+   HERO ANIMATION
+   ======================================== */
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-container {
+  animation: hero-in 1s cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
+}
+
+/* ========================================
+   PROMO CARD ANIMATION
+   ======================================== */
+
+@keyframes promo-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-promo-card {
+  animation: promo-entrance 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s both;
+}
+
+/* ========================================
+   PROMO SHIMMER
+   ======================================== */
+
+@keyframes promo-shimmer {
+  from {
+    background-position: -300px 0;
+  }
+
+  to {
+    background-position: 300px 0;
+  }
+}
+
+.animate-promo-shimmer {
+  animation: promo-shimmer 2.5s linear infinite;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
