@@ -25,8 +25,6 @@ const PHONE = process.env.NEXT_PUBLIC_PHONE ?? "9724570421";
 const LEASING_EMAIL =
   process.env.NEXT_PUBLIC_EMAIL ?? "crossingsmanager@livenjoymgt.com";
 
-const PROPERTY_MANAGER_EMAIL = "crossingsmanager@livenjoymgt.com";
-
 const ADDRESS = process.env.NEXT_PUBLIC_ADDRESS ?? "1900 Estrada Pkwy";
 
 const CITY = process.env.NEXT_PUBLIC_CITY ?? "Irving";
@@ -35,7 +33,7 @@ const STATE = process.env.NEXT_PUBLIC_STATE ?? "TX";
 
 const ZIP = process.env.NEXT_PUBLIC_ZIP ?? "75061";
 
-const OG_IMAGE = `/images/logo.png`;
+const OG_IMAGE = `${SITE_URL}/images/logo.png`;
 
 const FULL_PHONE = `+1${PHONE}`;
 
@@ -74,7 +72,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Discover Crossings at Irving Apartment Homes in Irving, Texas. Explore 1 and 2 bedroom apartments, floor plans, community amenities and leasing options.",
+    "Discover Crossings at Irving Apartment Homes in Irving, Texas. Explore 1 and 2 bedroom apartments, floor plans, community amenities, local attractions, and leasing options.",
 
   keywords: [
     "Crossings at Irving",
@@ -135,15 +133,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-
     url: SITE_URL,
-
     siteName: COMPANY_NAME,
 
     title: "Crossings at Irving | Apartments in Irving, TX",
 
     description:
-      "Explore 1 and 2 bedroom apartment homes, floor plans, community amenities and convenient living at Crossings at Irving in Irving, Texas.",
+      "Explore 1 and 2 bedroom apartment homes, floor plans, community amenities, and convenient living at Crossings at Irving in Irving, Texas.",
 
     images: [
       {
@@ -162,10 +158,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Crossings at Irving | Irving, TX",
+    title: "Crossings at Irving | Apartments in Irving, TX",
 
     description:
-      "Explore 1 and 2 bedroom apartments, floor plans and community amenities at Crossings at Irving.",
+      "Explore 1 and 2 bedroom apartments, floor plans, community amenities, and convenient living at Crossings at Irving.",
 
     images: [OG_IMAGE],
   },
@@ -231,16 +227,14 @@ const apartmentSchema = {
     addressCountry: "US",
   },
 
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: FULL_PHONE,
-      contactType: "leasing",
-      email: LEASING_EMAIL,
-      areaServed: "US",
-      availableLanguage: ["English"],
-    },
-  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: FULL_PHONE,
+    contactType: "leasing",
+    email: LEASING_EMAIL,
+    areaServed: "US",
+    availableLanguage: ["English"],
+  },
 
   numberOfBedrooms: ["1", "2"],
 
@@ -259,12 +253,7 @@ const apartmentSchema = {
     },
     {
       "@type": "LocationFeatureSpecification",
-      name: "Tennis Court",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Volleyball Court",
+      name: "Sports & Recreation Areas",
       value: true,
     },
     {
@@ -274,7 +263,7 @@ const apartmentSchema = {
     },
     {
       "@type": "LocationFeatureSpecification",
-      name: "BBQ and Picnic Area",
+      name: "BBQ & Picnic Areas",
       value: true,
     },
     {
@@ -285,11 +274,6 @@ const apartmentSchema = {
     {
       "@type": "LocationFeatureSpecification",
       name: "Pet Park",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Laundry Facilities",
       value: true,
     },
     {
@@ -318,19 +302,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={instrumentSerif.variable}>
       <body className="min-h-screen font-sans antialiased">
-        {/* =================================================
-            GOOGLE TAG MANAGER
-        ================================================= */}
-
+        {/* Google Tag Manager */}
         {process.env.NODE_ENV === "production" &&
           process.env.NEXT_PUBLIC_GTM_ID && (
             <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
           )}
 
-        {/* =================================================
-            STRUCTURED DATA
-        ================================================= */}
-
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -338,33 +316,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         />
 
-        {/* =================================================
-            PRODUCTION PROTECTION
-        ================================================= */}
-
+        {/* Production Protection */}
         {process.env.NODE_ENV === "production" && <DisableInspect />}
 
-        {/* =================================================
-            SMOOTH SCROLL
-        ================================================= */}
-
+        {/* Smooth Scroll */}
         <SmoothScroll />
 
-        {/* =================================================
-            APPLICATION
-        ================================================= */}
-
+        {/* Application */}
         {children}
 
-        {/* =================================================
-            TOAST NOTIFICATIONS
-        ================================================= */}
-
+        {/* Toast Notifications */}
         <Toaster
           position="top-right"
           toastOptions={{
             duration: 5000,
-
             style: {
               background: "#1E3872",
               color: "#ffffff",
