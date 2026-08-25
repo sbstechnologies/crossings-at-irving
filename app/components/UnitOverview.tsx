@@ -109,7 +109,7 @@ export default function UnitOverview({
 
   const interiorPhotos = useMemo(
     () => ({
-      "Living Room": "/images/2026/living Room.webp",
+      "Living Room": "/images/2026/Living Room.webp",
       Bedroom: "/images/2026/Bedroom.webp",
       Kitchen: "/images/2026/Kitchen.webp",
       Bathroom: "/images/2026/Bathroom.webp",
