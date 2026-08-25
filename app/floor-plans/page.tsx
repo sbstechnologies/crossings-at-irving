@@ -796,7 +796,7 @@ export default function Floor() {
 
         <div className="relative z-10 max-w-[720px]">
           <p className="mb-6 mt-[15px] font-[Plus_Jakarta_Sans] text-xs font-bold uppercase tracking-[0.3em] text-[#E09428]">
-            Crossings at Irving · Euless, TX
+            Crossings at Irving · IRVING, TX
           </p>
 
           <h1 className="font-[Instrument_Serif] text-[48px] leading-[0.98] tracking-[-0.04em] text-[#F5F2ED] md:text-[64px]">

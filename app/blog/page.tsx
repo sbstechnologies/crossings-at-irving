@@ -15,7 +15,7 @@ export default function Blog() {
       [images.blog3]: images.blog_alt3,
     };
 
-    return altMap[src] ?? "Crossings at Irving in Euless, Texas";
+    return altMap[src] ?? "Crossings at Irving in IRVING, Texas";
   };
   const [showTopBar, setShowTopBar] = useState(true);
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);

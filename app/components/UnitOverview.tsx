@@ -62,7 +62,7 @@ const amenityCategories = [
   "Pool",
   "Package Lockers",
   "Dog Park",
-  "Fitness Center",
+  "Covered Parking",
 ] as const;
 
 export default function UnitOverview({
@@ -109,20 +109,20 @@ export default function UnitOverview({
 
   const interiorPhotos = useMemo(
     () => ({
-      "Living Room": images.gallery24,
-      Bedroom: images.gallery25,
-      Kitchen: images.gallery26,
-      Bathroom: images.gallery27,
+      "Living Room": "/images/2026/living Room.webp",
+      Bedroom: "/images/2026/Bedroom.webp",
+      Kitchen: "/images/2026/Kitchen.webp",
+      Bathroom: "/images/2026/Bathroom.webp",
     }),
     [images],
   );
 
   const amenityPhotos = useMemo(
     () => ({
-      Pool: images.gallery36,
-      "Package Lockers": images.gallery34,
-      "Dog Park": images.gallery38,
-      "Fitness Center": images.gallery30,
+      Pool: "/images/2026/Pool.webp",
+      "Package Lockers": "/images/2026/Package Lockers.webp",
+      "Dog Park": "/images/2026/Dog Park.webp",
+      "Covered Parking": "/images/2026/Covered Parking.webp",
     }),
     [images],
   );

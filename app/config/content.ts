@@ -269,7 +269,7 @@ export const siteConfig = {
   name: "Crossings at Irving",
   shortName: "Crossings at Irving",
 
-  address: "1800 Estrada Pkwy, Irving, TX 76039",
+  address: "1900 Estrada Pkwy, Irving, TX 75061",
 
   phone: "(972) 457-0421",
   tel: "tel:+19724570421",
@@ -360,28 +360,16 @@ export const tourSlots = [
 
 export const footerLocation = [
   {
+    label: "Centennial Park",
+    distance: "1.5 mi",
+  },
+  {
+    label: "Irving Mall & Town Center",
+    distance: "2.1 mi",
+  },
+  {
     label: "DFW International Airport",
-    distance: "Nearby",
-  },
-  {
-    label: "North Lake College",
-    distance: "Nearby",
-  },
-  {
-    label: "University of Dallas",
-    distance: "Nearby",
-  },
-  {
-    label: "Golden Pioneer Plaza",
-    distance: "Nearby",
-  },
-  {
-    label: "Las Colinas",
-    distance: "Nearby",
-  },
-  {
-    label: "Dallas Love Field Airport",
-    distance: "Nearby",
+    distance: "6.5 mi",
   },
 ];
 
@@ -571,7 +559,8 @@ export const PromoCardWidgetConfig = {
 
   buttonText: "Apply Now",
 
-  applyLink: "https://livenjoy.myresman.com/Portal/Applicants/New/POTS?a=1588",
+  applyLink:
+    "https://livenjoy.myresman.com/Portal/Access/ApplicantRegistration?accountID=1588",
 };
 // ======================================================
 // HOME PAGE
@@ -783,7 +772,7 @@ export const homePageConfig = {
       alt: images.blog_alt1,
       category: "Local Eats",
       time: "4 min",
-      author: "Crossings Team",
+      author: "Crossings at Irving Team",
       date: "Aug 20",
       title: "Must-Try Dining & Local Flavors in Irving",
       desc: "Discover local dining favorites, Texas-inspired flavors, and diverse restaurants near Crossings at Irving, with easy access to the best food and entertainment across Irving and the DFW area.",
@@ -875,17 +864,17 @@ export const plans = {
   },
 };
 export const interiorPhotos = {
-  "Living Room": images.gallery24,
-  Bedroom: images.gallery25,
-  Kitchen: images.gallery26,
-  Bathroom: images.gallery27,
+  "Living Room": "/images/2026/living Room.webp",
+  Bedroom: "/images/2026/Bedroom.webp",
+  Kitchen: "/images/2026/Kitchen.webp",
+  Bathroom: "/images/2026/Bathroom.webp",
 } as const;
 
 export const amenityPhotos = {
-  Pool: images.gallery36,
-  Parking: images.gallery38,
-  "Dog Park": images.gallery40,
-  Gym: images.gallery30,
+  Pool: "/images/2026/Pool.webp",
+  "Package Lockers": "/images/2026/Package Lockers.webp",
+  "Dog Park": "/images/2026/Dog Park.webp",
+  "Covered Parking": "/images/2026/Covered Parking.webp",
 } as const;
 
 export const defaultPreviewImg = images.home14;
@@ -898,7 +887,11 @@ export type PreviewCategory =
   | "Kitchen"
   | "Bathroom";
 
-export type AmenityCategory = "Pool" | "Parking" | "Dog Park" | "Gym";
+export type AmenityCategory =
+  | "Pool"
+  | "Parking"
+  | "Dog Park"
+  | "Covered Parking";
 
 // ======================================================
 // FLOOR PLANS
@@ -1100,38 +1093,57 @@ export const gallery: GalleryItem[] = [
   // Exteriors — 1–6
   {
     src: images.gallery1,
-    name: "Leasing Office Entrance",
-    alt: "Leasing office entrance at Crossings at Irving in Irving, Texas",
+    name: "Leasing Office & Parking",
+    alt: "Leasing office and parking area at Crossings at Irving in Irving, Texas",
     category: "Exteriors",
   },
   {
     src: images.gallery2,
-    name: "Clubhouse Exterior",
-    alt: "Clubhouse exterior at Crossings at Irving in Irving, Texas",
+    name: "Leasing Office Ramp Entrance",
+    alt: "Leasing office ramp entrance at Crossings at Irving in Irving, Texas",
     category: "Exteriors",
   },
   {
     src: images.gallery3,
-    name: "Community Building Exterior",
-    alt: "Community building exterior at Crossings at Irving in Irving, Texas",
+    name: "Leasing Office Exterior Signage",
+    alt: "Leasing office exterior signage at Crossings at Irving in Irving, Texas",
     category: "Exteriors",
   },
   {
     src: images.gallery4,
-    name: "Apartment Community Exterior",
-    alt: "Apartment community exterior at Crossings at Irving in Irving, Texas",
+    name: "Apartment Buildings & Walkway",
+    alt: "Apartment buildings and walkway at Crossings at Irving in Irving, Texas",
     category: "Exteriors",
   },
   {
     src: images.gallery5,
-    name: "Community Grounds",
-    alt: "Landscaped community grounds at Crossings at Irving in Irving, Texas",
+    name: "Landscaped Residential Buildings",
+    alt: "Landscaped residential buildings at Crossings at Irving in Irving, Texas",
     category: "Exteriors",
   },
   {
     src: images.gallery6,
-    name: "Community Exterior View",
-    alt: "Exterior view of Crossings at Irving apartment community in Irving, Texas",
+    name: "Parking Lot & Covered Carports",
+    alt: "Parking lot and covered carports at Crossings at Irving in Irving, Texas",
+    category: "Exteriors",
+  },
+  {
+    src: images.gallery21,
+    name: "Crossings at Irving Monument Sign ",
+    alt: "Crossings at Irving Monument Sign  at Crossings at Irving in Irving, Texas",
+    category: "Exteriors",
+  },
+
+  {
+    src: images.gallery23,
+    name: "Landscaped Entrance & Signage",
+    alt: "Landscaped entrance and signage at Crossings at Irving in Irving, Texas",
+    category: "Exteriors",
+  },
+  {
+    src: images.gallery23,
+    name: "Property Entrance & Monument",
+    alt: "Property entrance and monument at Crossings at Irving in Irving, Texas",
     category: "Exteriors",
   },
 
@@ -1144,217 +1156,192 @@ export const gallery: GalleryItem[] = [
   },
   {
     src: images.gallery8,
-    name: "Swimming Pool & Pergola",
-    alt: "Swimming pool and pergola seating area at Crossings at Irving in Irving, Texas",
+    name: "Swimming Pool & Residential View",
+    alt: "Swimming pool and residential view at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery9,
-    name: "Poolside Lounge View",
-    alt: "Poolside Lounge View area at Crossings at Irving in Irving, Texas",
+    name: "Outdoor Sports Court / Hopscotch",
+    alt: "Outdoor sports court and hopscotch area at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery10,
-    name: "Poolside Lounge",
-    alt: "Shaded poolside lounge area at Crossings at Irving in Irving, Texas",
+    name: "Outdoor Sports Court",
+    alt: "Outdoor sports court at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery11,
-    name: "Poolside Lounge #1",
-    alt: "Shaded poolside lounge #1 area at Crossings at Irving in Irving, Texas",
+    name: "Multi-Use Sports Court",
+    alt: "Multi-use sports court at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery12,
-    name: "Dog Park",
-    alt: "Dog Park at Crossings at Irving in Irving, Texas",
+    name: "Fenced Dog Park",
+    alt: "Fenced dog park at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery13,
-    name: "Picnic Area",
-    alt: "Shaded outdoor picnic area at Crossings at Irving in Irving, Texas",
+    name: "Bark Park & Agility Course",
+    alt: "Bark Park and agility course at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery14,
-    name: "Picnic Area #1",
-    alt: "Shaded outdoor picnic area #1 at Crossings at Irving in Irving, Texas",
+    name: "Pet Play Area",
+    alt: "Pet play area at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery15,
-    name: "Outdoor Recreation Area",
-    alt: "Outdoor recreation area at Crossings at Irving in Irving, Texas",
+    name: "Dog Agility Obstacles",
+    alt: "Dog agility obstacles at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
   {
     src: images.gallery16,
-    name: "Community Outdoor Area",
-    alt: "Community outdoor area at Crossings at Irving in Irving, Texas",
+    name: "Bark Park Play Equipment",
+    alt: "Bark Park play equipment at Crossings at Irving in Irving, Texas",
     category: "Amenities",
   },
 
   // Neighborhood — 17–18
   {
     src: images.gallery17,
-    name: "Package Locker Service",
-    alt: "Package locker service at Crossings at Irving in Irving, Texas",
+    name: "Resident Mail Center",
+    alt: "Resident mail center at Crossings at Irving in Irving, Texas",
     category: "Neighborhood",
   },
   {
     src: images.gallery18,
-    name: "Resident Mail Center",
-    alt: "Resident mail center at Crossings at Irving in Irving, Texas",
+    name: "Leasing Office & Consultation Desk",
+    alt: "Leasing office and consultation desk at Crossings at Irving in Irving, Texas",
+    category: "Neighborhood",
+  },
+
+  // Neighborhood — 41
+  {
+    src: images.gallery41,
+    name: "Covered Resident Carports & Parking",
+    alt: "Covered resident carports and parking at Crossings at Irving in Irving, Texas",
     category: "Neighborhood",
   },
 
   // Interiors — 19–20
   {
     src: images.gallery19,
-    name: "Resident Club House",
-    alt: "Resident Club House at Crossings at Irving in Irving, Texas",
+    name: "Resident Clubhouse & Coffee Station",
+    alt: "Resident clubhouse and coffee station at Crossings at Irving in Irving, Texas",
     category: "Interiors",
-  },
-  {
-    src: images.gallery20,
-    name: "Resident Club House & Meeting",
-    alt: "Resident Club House & Meeting at Crossings at Irving in Irving, Texas",
-    category: "Interiors",
-  },
-
-  // Exteriors — 21–23
-  {
-    src: images.gallery21,
-    name: "Apartment Exterior",
-    alt: "Apartment building exterior at Crossings at Irving in Irving, Texas",
-    category: "Exteriors",
-  },
-  {
-    src: images.gallery22,
-    name: "Community Exterior",
-    alt: "Crossings at Irving community exterior in Irving, Texas",
-    category: "Exteriors",
-  },
-  {
-    src: images.gallery23,
-    name: "Landscaped Exterior",
-    alt: "Landscaped exterior grounds at Crossings at Irving in Irving, Texas",
-    category: "Exteriors",
   },
 
   // Interiors — 24–40
+
   {
     src: images.gallery24,
-    name: "Apartment Living Room",
-    alt: "Apartment living room at Crossings at Irving in Irving, Texas",
+    name: "Open Living & Kitchen Layout",
+    alt: "Open living and kitchen layout at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery25,
-    name: "Kitchen & Dining Area",
-    alt: "Apartment kitchen and dining area at Crossings at Irving in Irving, Texas",
+    name: "Living Room & Breakfast Bar",
+    alt: "Living room and breakfast bar at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery26,
-    name: "Hall with Fireplace",
-    alt: "Main Hall with Fireplace at Crossings at Irving in Irving, Texas",
+    name: "Living Room with Wood-Burning Fireplace",
+    alt: "Living room with wood-burning fireplace at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery27,
-    name: "Main Hall with Fireplace",
-    alt: "Hall with Fireplace at Crossings at Irving in Irving, Texas",
+    name: "Open-Concept Living & Modern Kitchen",
+    alt: "Open-concept living and modern kitchen at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery28,
-    name: "Spacious Bedroom",
-    alt: "Spacious apartment bedroom at Crossings at Irving in Irving, Texas",
+    name: "Hallway & Closet Storage",
+    alt: "Hallway and closet storage at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery29,
-    name: "Bathroom",
-    alt: "Apartment bathroom at Crossings at Irving in Irving, Texas",
+    name: "In-Unit Washer & Dryer Hookups",
+    alt: "In-unit washer and dryer hookups at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery30,
-    name: "Modern Living Area",
-    alt: "Modern Living Area at Crossings at Irving in Irving, Texas",
+    name: "Spacious Bedroom with Natural Light",
+    alt: "Spacious bedroom with natural light at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery31,
-    name: "Modern Living Room",
-    alt: "Modern Living Room at Crossings at Irving in Irving, Texas",
+    name: "Primary Bedroom with Ensuite Entry",
+    alt: "Primary bedroom with ensuite entry at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery32,
-    name: "Modern Living Hall",
-    alt: "Modern Living Hall at Crossings at Irving in Irving, Texas",
+    name: "Primary Bedroom with Walk-In Closet",
+    alt: "Primary bedroom with walk-in closet at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery33,
-    name: "Modern Living Hall #1",
-    alt: "Modern Living Hall #1 at Crossings at Irving in Irving, Texas",
+    name: "Bright Bedroom with Ceiling Fan",
+    alt: "Bright bedroom with ceiling fan at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery34,
-    name: "Modern Bathroom",
-    alt: "Modern Bathroom at Crossings at Irving in Irving, Texas",
+    name: "Modern Bathroom with Vanity",
+    alt: "Modern bathroom with vanity at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery35,
-    name: "Modern Bathroom #1",
-    alt: "Modern Bathroom #1 at Crossings at Irving in Irving, Texas",
+    name: "Built-In Walk-In Closet Shelving",
+    alt: "Built-in walk-in closet shelving at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery36,
-    name: "Resident Bedroom",
-    alt: "Resident Bedroom at Crossings at Irving in Irving, Texas",
+    name: "Bedroom with Wood-Style Flooring",
+    alt: "Bedroom with wood-style flooring at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery37,
-    name: "Resident Bedroom  #1",
-    alt: "Resident Bedroom #1 at Crossings at Irving in Irving, Texas",
+    name: "Bedroom with Walk-In Closet Access",
+    alt: "Bedroom with walk-in closet access at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery38,
-    name: "Resident Bedroom  #2",
-    alt: "Resident Bedroom #2 at Crossings at Irving in Irving, Texas",
+    name: "Bedroom with Sliding Closet Doors",
+    alt: "Bedroom with sliding closet doors at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery39,
-    name: "Community Interior",
-    alt: "Community interior space at Crossings at Irving in Irving, Texas",
+    name: "Full Bathroom & Vanity Suite",
+    alt: "Full bathroom and vanity suite at Crossings at Irving in Irving, Texas",
     category: "Interiors",
   },
   {
     src: images.gallery40,
-    name: "Resident Entrance",
-    alt: "Resident Entrance #1 at Crossings at Irving in Irving, Texas",
+    name: "Private Balcony & Entryway",
+    alt: "Private balcony and entryway at Crossings at Irving in Irving, Texas",
     category: "Interiors",
-  },
-
-  // Neighborhood — 41
-  {
-    src: images.gallery41,
-    name: "Car Parking",
-    alt: "Car Parking near Crossings at Irving in Irving, Texas",
-    category: "Neighborhood",
   },
 ];
 // ======================================================
@@ -1382,7 +1369,7 @@ export const posts: Post[] = [
     category: "Outdoors",
     readTime: "5 min",
     initials: "CI",
-    author: "Crossings Team",
+    author: "Crossings at Irving Team",
     date: "Aug 15, 2026",
 
     title: "Discover Outdoor Recreation Around Irving",
@@ -1406,7 +1393,7 @@ export const posts: Post[] = [
     category: "Local Life",
     readTime: "4 min",
     initials: "CI",
-    author: "Crossings Team",
+    author: "Crossings at Irving Team",
     date: "Aug 10, 2026",
 
     title: "A Weekend Guide to Shopping & Dining in Irving",
@@ -1434,7 +1421,7 @@ export const featuredPost: Post = {
   category: "Local Life",
   readTime: "5 min",
   initials: "CI",
-  author: "Crossings Team",
+  author: "Crossings at Irving Team",
   date: "Aug 20, 2026",
 
   title: "Discover Local Life Around Crossings at Irving",
@@ -1471,7 +1458,7 @@ export const articles = [
     readTime: "4 min",
     authorInitials: "CI",
     authorBg: "bg-[#E09428]/10 text-[#E09428]",
-    authorName: "Crossings Team",
+    authorName: "Crossings at Irving Team",
     date: "Aug 20",
     title: "Must-Try Dining & Local Flavors in Irving",
     description:
@@ -1485,7 +1472,7 @@ export const articles = [
     readTime: "5 min",
     authorInitials: "CI",
     authorBg: "bg-[#2a5a8f]/10 text-[#2a5a8f]",
-    authorName: "Crossings Team",
+    authorName: "Crossings at Irving Team",
     date: "Aug 15",
     title: "Discover Outdoor Recreation Around Irving",
     description:
@@ -1499,7 +1486,7 @@ export const articles = [
     readTime: "4 min",
     authorInitials: "CI",
     authorBg: "bg-[#1E3872]/10 text-[#1E3872]",
-    authorName: "Crossings Team",
+    authorName: "Crossings at Irving Team",
     date: "Aug 10",
     title: "A Weekend Guide to Shopping & Dining in Irving",
     description:

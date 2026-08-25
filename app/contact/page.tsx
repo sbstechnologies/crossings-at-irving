@@ -32,7 +32,7 @@ export default function Contact() {
             specials?
             <br />
             Our dedicated leasing team is here to help you find your perfect new
-            home in Euless Worth.
+            home in the heart of Irving at Crossings at Irving.
           </p>
         </div>
       </section>

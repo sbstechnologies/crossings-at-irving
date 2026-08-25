@@ -32,9 +32,11 @@ export default function Contact() {
           </h1>
 
           <p className="mt-8 max-w-2xl font-[Plus_Jakarta_Sans] text-base leading-relaxed text-[#bfc6d6] md:text-lg">
-            Ready to make Western Station your home? Our leasing team is
-            standing by to answer questions, schedule tours, and walk you
-            through the leasing process.
+            Have questions about our floor plans, amenities, or current lease
+            specials?
+            <br />
+            Our dedicated leasing team is here to help you find your perfect new
+            home in the heart of Irving at Crossings at Irving.
           </p>
         </div>
       </section>

@@ -201,8 +201,8 @@ export default function Home() {
         <Header showTopBar={showTopBar} />
 
         <Image
-          src={images.gallery10}
-          alt={images.gallery_alt10}
+          src={"/images/2026/Pool.webp"}
+          alt={"Swimming Pool & Residential View at Crossings at Irving"}
           fill
           priority
           quality={100}
@@ -536,7 +536,7 @@ export default function Home() {
                 ))}
 
                 {/* Pet Friendly */}
-                <span className="font-[Plus_Jakarta_Sans] inline-flex items-center gap-2 text-xs font-bold bg-[#fdf3e7] text-[#d9871e] px-4 py-2.5 rounded-full border border-[#e09428]/15 whitespace-nowrap">
+                <span className="font-[Plus_Jakarta_Sans] inline-flex items-center gap-2 text-xs font-bold bg-[#fdf3e7] text-[#d9871e] px-4 py-2.5 rounded-full border border-[#e09428]/15 whitespace-nowrap ml-auto">
                   <svg
                     className="w-3.5 h-3.5 shrink-0"
                     fill="none"

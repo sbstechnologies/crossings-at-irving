@@ -42,13 +42,13 @@ export default function HousingVoucher() {
               className={`${jakarta.className} space-y-7 text-[16px] leading-8 text-stone-600 md:text-[17px]`}
             >
               <p>
-                Crossings at Irving Apartments, located at 6700 Sandshell Blvd,
-                Fort Worth, TX 76137 welcomes applicants and residents
-                participating in the Housing Choice Voucher Program and other
-                rental assistance programs, subject to unit availability,
-                standard screening criteria, applicable income and rent
-                restrictions, Public Housing Authority (PHA) approval
-                requirements, and all applicable program guidelines.
+                Crossings at Irving Apartments, located at 1900 Estrada Pkwy,
+                Irving, TX 75061 welcomes applicants and residents participating
+                in the Housing Choice Voucher Program and other rental
+                assistance programs, subject to unit availability, standard
+                screening criteria, applicable income and rent restrictions,
+                Public Housing Authority (PHA) approval requirements, and all
+                applicable program guidelines.
               </p>
 
               <p>
