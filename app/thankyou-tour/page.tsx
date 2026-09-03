@@ -198,7 +198,7 @@ export default function Contact() {
 
                 <div className="mt-6">
                   <p className="text-sm font-semibold text-gray-700 md:text-xl">
-                    We look forward to showing you around Western Station!
+                    We look forward to showing you around Crossings at Irving!
                   </p>
 
                   <p className="mt-3 text-sm text-gray-500 md:text-base">

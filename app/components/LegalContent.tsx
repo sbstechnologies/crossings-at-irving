@@ -535,7 +535,7 @@ export default function LegalContent() {
         <motion.p className="font-[Plus_Jakarta_Sans] text-[18px] font-normal leading-[1.9] tracking-[0.01em] text-[#4B4B4B]">
           LiveNJoy Management is dedicated to providing a digital environment
           that is accessible to all individuals, including those with
-          disabilities. We actively design and maintain the Western Station
+          disabilities. We actively design and maintain the Crossings at Irving
           Apartment Homes website to align with the{" "}
           <strong className="font-semibold text-[#232323]">
             Web Content Accessibility Guidelines (WCAG)

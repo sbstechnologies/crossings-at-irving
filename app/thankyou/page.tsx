@@ -198,8 +198,8 @@ export default function Contact() {
 
                 <div className="mt-6">
                   <p className="text-sm font-semibold text-gray-700 md:text-xl">
-                    Our Western Station leasing team will quickly reach back to
-                    you!
+                    Our Crossings at Irving leasing team will quickly reach back
+                    to you!
                   </p>
 
                   <p className="mt-3 text-sm text-gray-500 md:text-base">

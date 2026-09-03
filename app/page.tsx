@@ -318,8 +318,9 @@ export default function Home() {
                 Right Where You Live
               </h2>
             </div>
+
             <div className="md:flex md:items-center">
-              <p className="font-[Plus_Jakarta_Sans] text-[15px] sm:text-[16px] md:text-[19px] leading-[1.75] text-[#9faac0] max-w-[680px]">
+              <p className="font-[Plus_Jakarta_Sans] text-[15px] sm:text-[16px] md:text-[19px] leading-[1.75] text-[#9faac0] max-w-xxl">
                 Our collection of community amenities makes every day at
                 Crossings at Irving relaxing and convenient. Unwind by our
                 sparkling swimming pool, enjoy outdoor matches on the sports
@@ -1121,36 +1122,52 @@ export default function Home() {
           </div>
 
           {/* CONTACT INFO — stack on mobile */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
-            <div className="flex items-center gap-3">
-              <Phone size={17} className="text-[#76a1ff] shrink-0" />
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
+            {/* Phone */}
+            <a
+              href={`tel:${String(siteConfig.phone).replace(/[^\d+]/g, "")}`}
+              className="relative z-10 flex items-center gap-2 group cursor-pointer transition-all duration-300"
+              aria-label={`Call ${siteConfig.phone}`}
+            >
+              <Phone
+                size={17}
+                className="text-[#76a1ff] shrink-0 transition-transform duration-300 group-hover:scale-110"
+              />
 
-              <span className="font-[Plus_Jakarta_Sans] text-[13px] text-[rgba(245,242,237,0.55)]">
+              <span className="font-[Plus_Jakarta_Sans] text-[13px] text-[rgba(245,242,237,0.55)] transition-colors duration-300 group-hover:text-[#76a1ff]">
                 {siteConfig.phone}
               </span>
-            </div>
+            </a>
 
-            <div className="flex items-center gap-3">
-              <Mail size={17} className="text-[#76a1ff] shrink-0" />
+            {/* Email */}
+            <a
+              href={`mailto:${String(siteConfig.email).trim()}`}
+              className="relative z-10 flex items-center gap-2 group cursor-pointer transition-all duration-300"
+              aria-label={`Email ${siteConfig.email}`}
+            >
+              <Mail
+                size={17}
+                className="text-[#76a1ff] shrink-0 transition-transform duration-300 group-hover:scale-110"
+              />
 
-              <span className="font-[Plus_Jakarta_Sans] text-[13px] text-[rgba(245,242,237,0.55)]">
+              <span className="font-[Plus_Jakarta_Sans] text-[13px] text-[rgba(245,242,237,0.55)] transition-colors duration-300 group-hover:text-[#76a1ff]">
                 {siteConfig.email}
               </span>
-            </div>
+            </a>
 
-            <div className="flex items-start gap-3">
-              <Clock size={17} className="text-[#76a1ff] shrink-0 mt-[3px]" />
+            {/* Hours */}
+            <div className="flex items-center gap-2">
+              <Clock size={17} className="text-[#76a1ff] shrink-0" />
 
               <span className="font-[Plus_Jakarta_Sans] text-[13px] text-[rgba(245,242,237,0.55)]">
                 {siteConfig.hours}
               </span>
             </div>
 
-            <div className="flex items-start gap-3">
-              <span className="font-[Plus_Jakarta_Sans] text-[13px] text-[rgba(245,242,237,0.55)]">
-                {siteConfig.hours1}
-              </span>
-            </div>
+            {/* Hours 1 */}
+            <span className="font-[Plus_Jakarta_Sans] text-[13px] text-[rgba(245,242,237,0.55)]">
+              {siteConfig.hours1}
+            </span>
           </div>
         </div>
       </section>

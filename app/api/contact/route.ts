@@ -110,7 +110,7 @@ export async function POST(req: Request) {
       "info@livenjoymgt.com",
     ];
     if (resident === "Future Resident") {
-      toRecipients.push("sbstechnololgies.in@gmail.com");
+      toRecipients.push("crossings-at-irving@rentbamboo.ai");
     }
 
     const ccRecipients: string[] = [];
@@ -422,7 +422,7 @@ export async function POST(req: Request) {
 
     <div style="margin-top:15px;">
       This email was automatically generated
-      from the Western Station website contact form.
+      from the Crossings at Irving website contact form.
     </div>
 
     <div style="margin-top:10px;">
