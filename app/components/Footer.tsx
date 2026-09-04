@@ -4,7 +4,6 @@ import { Home, MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 
 import Image from "next/image";
 import { headerConfig } from "@/app/config/content";
-import DisableInspect from "@/app/components/DisableInspect";
 import TourScheduler from "@/app/components/TourScheduler";
 import { useState } from "react";
 

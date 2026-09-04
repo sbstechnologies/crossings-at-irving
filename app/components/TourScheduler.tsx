@@ -10,14 +10,14 @@ export default function TourScheduler({ open, onClose }: TourSchedulerProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] bg-black/70 md:flex md:items-center md:justify-center md:p-6"
+      className="fixed inset-0 z-9999 bg-black/70 md:flex md:items-center md:justify-center md:p-6"
       onClick={onClose}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className="
       relative
-      h-[100dvh]
+      h-dvh
       w-full
       bg-white
       md:h-[90vh]
