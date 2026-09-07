@@ -52,45 +52,42 @@ export default function PromoCardWidget() {
         </div>
 
         {/* Content Block */}
-        <div className="p-4 pt-3.5 pb-4 flex flex-col gap-2.5">
+        <div className="flex flex-col gap-2.5 p-4 pb-4 pt-3.5">
           {/* Item Row 1 */}
-          <div className="flex items-start gap-2 p-2.5 px-3 rounded-[10px] bg-[rgba(224,148,40,0.08)] border border-[rgba(224,148,40,0.22)]">
-            <Sparkles size={13} className="text-[#E09428] shrink-0 mt-[1px]" />
+          <div className="flex items-start gap-2 rounded-[10px] border border-[rgba(224,148,40,0.22)] bg-[rgba(224,148,40,0.08)] p-2.5 px-3">
+            <Sparkles size={13} className="mt-[1px] shrink-0 text-[#E09428]" />
 
             <div>
-              <p className="font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold text-[#E09428] m-0 tracking-[-0.01em]">
+              <p className="m-0 font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold tracking-[-0.01em] text-[#E09428]">
                 {PromoCardWidgetConfig.cards[0].title}
               </p>
 
-              <p className="font-['Plus_Jakarta_Sans'] text-[11px] text-[#5A6260] m-0 mt-[2px] leading-[1.45]">
+              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[11px] leading-[1.45] text-[#5A6260]">
                 {PromoCardWidgetConfig.cards[0].text}{" "}
-                <strong className="text-[#2D3230] font-bold">
+                <strong className="font-bold text-[#2D3230]">
                   {PromoCardWidgetConfig.cards[0].highlight}
                 </strong>
+                <br />
                 {PromoCardWidgetConfig.cards[0].suffix}
               </p>
             </div>
           </div>
 
           {/* Item Row 2 */}
-          <div className="flex items-start gap-2 p-2.5 px-3 rounded-[10px] bg-[rgba(30,56,114,0.06)] border border-[rgba(30,56,114,0.14)]">
-            <Sparkles size={13} className="text-[#1E3872] shrink-0 mt-[1px]" />
+          <div className="flex items-start gap-2 rounded-[10px] border border-[rgba(30,56,114,0.14)] bg-[rgba(30,56,114,0.06)] p-2.5 px-3">
+            <Sparkles size={13} className="mt-[1px] shrink-0 text-[#1E3872]" />
 
             <div>
-              <p className="font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold text-[#1E3872] m-0 tracking-[-0.01em]">
+              <p className="m-0 font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold tracking-[-0.01em] text-[#1E3872]">
                 {PromoCardWidgetConfig.cards[1].title}
               </p>
 
-              <p className="font-['Plus_Jakarta_Sans'] text-[11px] text-[#5A6260] m-0 mt-[2px] leading-[1.45]">
-                {PromoCardWidgetConfig.cards[1].text}{" "}
-                <strong className="text-[#2D3230] font-extrabold">
+              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[11px] leading-[1.45] text-[#5A6260]">
+                {PromoCardWidgetConfig.cards[1].text} <br />
+                <strong className="font-bold text-[#2D3230]">
                   {PromoCardWidgetConfig.cards[1].highlight}
-                </strong>
-                {PromoCardWidgetConfig.cards[1].suffix}{" "}
-                <strong className="text-[#1E3872] font-extrabold">
-                  {PromoCardWidgetConfig.cards[1].highlight2}
-                </strong>
-                {PromoCardWidgetConfig.cards[1].suffix2}
+                </strong>{" "}
+                {PromoCardWidgetConfig.cards[1].suffix}
               </p>
             </div>
           </div>

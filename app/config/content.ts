@@ -1,3 +1,89 @@
+// ======================================================
+// SITE CONFIG
+// ======================================================
+
+export const siteConfig = {
+  name: "Crossings at Irving",
+  shortName: "Crossings at Irving",
+
+  address: "1900 Estrada Pkwy, Irving, TX 75061",
+
+  phone: "(972) 457-0421",
+  tel: "tel:+19724570421",
+
+  email: "crossingsmanager@livenjoymgt.com",
+  propertyManagerEmail: "crossingsmanager@livenjoymgt.com",
+
+  hours: "Mon–Fri: 8:30 AM – 5:30 PM",
+  hours1: "Sat: 10:00 AM – 4:00 PM",
+
+  website: "https://crossingsatirvingapts.com",
+
+  applyLink:
+    "https://livenjoy.myresman.com/Portal/Access/ApplicantRegistration?accountID=1588",
+};
+
+export const lookLeaseSpecial = {
+  id: "look",
+  badge: "LOOK & LEASE SPECIAL",
+  text: "1 Month Free! 1-bedroom from $999 | Save $200 every month on 2-bedrooms ! Move in by September 30th !",
+};
+
+export const floorPlansSpecial = {
+  id: "floor-plans-special",
+  badge: "LOOK & LEASE SPECIAL",
+  headline: "Special Promotion - Huge Specials",
+  badges: ["1 Month Free | 1BR from $999", "2BR Save $200/mo"],
+  phone: "(972) 457-0421",
+  tel: "tel:+19724570421",
+};
+
+export const lookLeaseOffer = {
+  id: "look-lease-offer",
+  tagline: "LIMITED TIME OFFER",
+  title: "Look & Lease Special",
+  subtext:
+    "Receive 1 month free and ongoing monthly discounts on select homes.",
+  highlight: " Must move in by September 30, 2026 !",
+  buttonText: "Call Now: (972) 457-0421",
+  buttonHref: "tel:+19724570421",
+};
+
+// ======================================================
+// PROMOTION
+// ======================================================
+
+export const PromoCardWidgetConfig = {
+  label: "LIMITED TIME",
+  title: "Special Promotion",
+
+  cards: [
+    {
+      title: "Huge Leasing Specials",
+      text: "",
+      highlight:
+        "1 Month Free! 1-bedroom homes starting at $999; save $200 every month on 2-bedrooms.",
+      suffix: "",
+      theme: "orange",
+    },
+    {
+      title: "Contact Us Today",
+      text: "Call us right now for details.",
+      highlight: "Must move in by September 30, 2026.",
+      suffix: "",
+      theme: "blue",
+    },
+  ],
+
+  buttonText: "Apply Now",
+
+  applyLink:
+    "https://livenjoy.myresman.com/Portal/Access/ApplicantRegistration?accountID=1588",
+
+  phone: "Call us: (972) 457-0421",
+  phoneLink: "tel:+19724570421",
+};
+
 export const images = {
   // ==============================
   // PROPERTY / HOME
@@ -262,28 +348,6 @@ export const images = {
 };
 
 // ======================================================
-// SITE CONFIG
-// ======================================================
-
-export const siteConfig = {
-  name: "Crossings at Irving",
-  shortName: "Crossings at Irving",
-
-  address: "1900 Estrada Pkwy, Irving, TX 75061",
-
-  phone: "(972) 457-0421",
-  tel: "tel:+19724570421",
-
-  email: "crossingsmanager@livenjoymgt.com",
-  propertyManagerEmail: "crossingsmanager@livenjoymgt.com",
-
-  hours: "Mon–Fri: 8:30 AM – 5:30 PM",
-  hours1: "Sat: 10:00 AM – 4:00 PM",
-
-  website: "https://crossingsatirvingapts.com",
-};
-
-// ======================================================
 // UNITS
 // ======================================================
 export const units = [
@@ -372,16 +436,6 @@ export const footerLocation = [
     distance: "6.5 mi",
   },
 ];
-
-// ======================================================
-// LEASE SPECIAL
-// ======================================================
-
-export const lookLeaseSpecial = {
-  id: "look",
-  badge: "LOOK. LEASE. SAVE.",
-  text: "1 Month Free on select homes · 1-Bedroom Homes Starting at $999 · 2-Bedrooms Save $200 Every Month.",
-};
 
 // ======================================================
 // HEADER
@@ -531,37 +585,6 @@ export const leasePortalConfig = {
   availabilityText: `Prices and availability subject to change · Pets welcome · Call ${siteConfig.phone}`,
 };
 
-// ======================================================
-// PROMOTION
-// ======================================================
-export const PromoCardWidgetConfig = {
-  label: "Limited Time",
-  title: "Special Promotion",
-
-  cards: [
-    {
-      title: "First Month Free",
-      text: "Act fast to get this offer and our",
-      highlight: "best rates",
-      suffix: ", limited availability remaining.",
-      theme: "orange",
-    },
-    {
-      title: "Contact Us Today",
-      text: "1 Bedroom Apts Starting At",
-      highlight: "$999!",
-      suffix: " Save ",
-      highlight2: "$200",
-      suffix2: " monthly on 2-Bedroom Apts!",
-      theme: "blue",
-    },
-  ],
-
-  buttonText: "Apply Now",
-
-  applyLink:
-    "https://livenjoy.myresman.com/Portal/Access/ApplicantRegistration?accountID=1588",
-};
 // ======================================================
 // HOME PAGE
 // ======================================================
