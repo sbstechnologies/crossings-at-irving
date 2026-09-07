@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import TourScheduler from "@/app/components/TourScheduler";
+import { floorPlansSpecial } from "@/app//config/content";
 
 type BedroomType = "1bed" | "2bed";
 type GalleryTab = "photos" | "amenities";
@@ -203,38 +204,41 @@ export default function UnitOverview({
             PROMOTION
         ===================================================== */}
 
-        <div className="mt-8 flex flex-col gap-4 rounded-[16px] bg-gradient-to-br from-[#e09428] to-[#c87818] p-4 shadow-[0_4px_28px_rgba(224,148,40,0.45)] sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:p-[14px_24px]">
-          <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            <div className="w-fit rounded-full border border-[#f5f2ee]/35 bg-[#f5f2ee]/20 px-3 py-1">
+        {/* =====================================================
+            PROMOTION
+        ===================================================== */}
+
+        <div className="mt-8 flex flex-col gap-4 rounded-[16px] bg-gradient-to-br from-[#e09428] to-[#c87818] p-4 shadow-[0_4px_28px_rgba(224,148,40,0.45)] sm:flex-row sm:items-center sm:justify-between sm:p-[14px_24px]">
+          <div className="flex min-w-0 flex-1 flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <div className="w-fit shrink-0 rounded-full border border-[#f5f2ee]/35 bg-[#f5f2ee]/20 px-3 py-1">
               <span className="font-[Plus_Jakarta_Sans] text-[10px] font-bold uppercase tracking-[0.14em] text-[#f5f2ee]">
-                Look &amp; Lease Special
+                {floorPlansSpecial.badge}
               </span>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
               <span className="px-1 font-[Instrument_Serif] text-[20px] leading-none tracking-[-0.02em] text-[#f5f2ee]">
-                Special Promotion
+                {floorPlansSpecial.headline}
               </span>
 
-              {(["1bed", "2bed"] as BedroomType[]).map((type) => (
+              {floorPlansSpecial.badges.map((badge) => (
                 <span
-                  key={type}
+                  key={badge}
                   className="rounded-full bg-[#f5f2ee]/15 px-3 py-1 font-[Plus_Jakarta_Sans] text-xs font-semibold text-[#f5f2ee]/90 sm:text-[13px]"
                 >
-                  {type === "1bed" ? "1BR" : "2BR"} from{" "}
-                  {bedroomPricing[type].replace("/mo", "")}
+                  {badge}
                 </span>
               ))}
             </div>
           </div>
 
           <a
-            href={`tel:${phone.replace(/[^0-9+]/g, "")}`}
-            aria-label={`Call Crossings at Irving at ${phone}`}
-            className="inline-flex w-fit shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-[#f5f2ee] px-5 py-2.5 font-[Plus_Jakarta_Sans] text-[13px] font-bold text-[#a85e48] shadow-[0_2px_12px_rgba(0,0,0,0.14)] transition-transform active:scale-[0.98]"
+            href={floorPlansSpecial.tel}
+            aria-label={`Call Highland Park Apartment Homes at ${floorPlansSpecial.phone}`}
+            className="inline-flex w-fit shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-[#f5f2ee] px-5 py-2.5 font-[Plus_Jakarta_Sans] text-[13px] font-bold text-[#a85e48] shadow-[0_2px_12px_rgba(0,0,0,0.14)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
             <span aria-hidden="true">☎</span>
-            {phone}
+            {floorPlansSpecial.phone}
           </a>
         </div>
 

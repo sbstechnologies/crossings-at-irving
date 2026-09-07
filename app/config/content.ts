@@ -33,7 +33,7 @@ export const floorPlansSpecial = {
   id: "floor-plans-special",
   badge: "LOOK & LEASE SPECIAL",
   headline: "Special Promotion - Huge Specials",
-  badges: ["1 Month Free | 1BR from $999", "2BR Save $200/mo"],
+  badges: ["1 Month Free ", " 1BR from $999", "2BR Save $200/mo"],
   phone: "(972) 457-0421",
   tel: "tel:+19724570421",
 };
