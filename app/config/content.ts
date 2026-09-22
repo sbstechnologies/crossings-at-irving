@@ -796,7 +796,7 @@ export const homePageConfig = {
       category: "Local Eats",
       time: "4 min",
       author: "Crossings at Irving Team",
-      date: "Aug 20",
+      date: "",
       title: "Must-Try Dining & Local Flavors in Irving",
       desc: "Discover local dining favorites, Texas-inspired flavors, and diverse restaurants near Crossings at Irving, with easy access to the best food and entertainment across Irving and the DFW area.",
     },
@@ -1393,7 +1393,7 @@ export const posts: Post[] = [
     readTime: "5 min",
     initials: "CI",
     author: "Crossings at Irving Team",
-    date: "Aug 15, 2026",
+    date: "",
 
     title: "Discover Outdoor Recreation Around Irving",
 
@@ -1417,7 +1417,7 @@ export const posts: Post[] = [
     readTime: "4 min",
     initials: "CI",
     author: "Crossings at Irving Team",
-    date: "Aug 10, 2026",
+    date: "",
 
     title: "A Weekend Guide to Shopping & Dining in Irving",
 
@@ -1445,7 +1445,7 @@ export const featuredPost: Post = {
   readTime: "5 min",
   initials: "CI",
   author: "Crossings at Irving Team",
-  date: "Aug 20, 2026",
+  date: "",
 
   title: "Discover Local Life Around Crossings at Irving",
 
@@ -1482,7 +1482,7 @@ export const articles = [
     authorInitials: "CI",
     authorBg: "bg-[#E09428]/10 text-[#E09428]",
     authorName: "Crossings at Irving Team",
-    date: "Aug 20",
+    date: "",
     title: "Must-Try Dining & Local Flavors in Irving",
     description:
       "Discover local dining favorites, Texas-inspired flavors, and diverse restaurants near Crossings at Irving, with easy access to food and entertainment throughout Irving and the DFW area.",
@@ -1496,7 +1496,7 @@ export const articles = [
     authorInitials: "CI",
     authorBg: "bg-[#2a5a8f]/10 text-[#2a5a8f]",
     authorName: "Crossings at Irving Team",
-    date: "Aug 15",
+    date: "",
     title: "Discover Outdoor Recreation Around Irving",
     description:
       "Explore parks, outdoor recreation, and green spaces around Irving while enjoying convenient access to everyday destinations from Crossings at Irving.",
@@ -1510,7 +1510,7 @@ export const articles = [
     authorInitials: "CI",
     authorBg: "bg-[#1E3872]/10 text-[#1E3872]",
     authorName: "Crossings at Irving Team",
-    date: "Aug 10",
+    date: "",
     title: "A Weekend Guide to Shopping & Dining in Irving",
     description:
       "Discover convenient shopping, dining, entertainment, and everyday destinations around Irving and the surrounding DFW area.",
