@@ -31,7 +31,7 @@ export default function OfferCTA({
           <p className="mt-3 max-w-[900px] font-[Plus_Jakarta_Sans] text-[17px] leading-relaxed text-white md:text-[18px]">
             {subtext}
             {highlight && (
-              <span className="block mt-2 font-bold text-[#f5f2ed]">
+              <span className="mt-1 block font-bold text-[#f5f2ed]">
                 {highlight}
               </span>
             )}
