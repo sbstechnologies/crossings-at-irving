@@ -288,18 +288,21 @@ export const images = {
   amenities5: "/images/amenities/5.webp",
   amenities6: "/images/amenities/6.webp",
 
-  amenities_alt1: "Swimming pool at Crossings at Irving",
+  amenities_alt1:
+    "Resort-style swimming pool at Crossings at Irving apartments",
 
-  amenities_alt2: "Playground at Crossings at Irving",
+  amenities_alt2: "Children's playground at Crossings at Irving apartments",
 
-  amenities_alt3: "Tennis court at Crossings at Irving",
+  amenities_alt3: "Tennis court at Crossings at Irving apartments",
 
   amenities_alt4:
-    "Volleyball court and sports recreation area at Crossings at Irving",
+    "Volleyball court and outdoor sports recreation area at Crossings at Irving apartments",
 
-  amenities_alt5: "BBQ and picnic area at Crossings at Irving",
+  amenities_alt5:
+    "Outdoor BBQ and picnic area at Crossings at Irving apartments",
 
-  amenities_alt6: "Pet-friendly community and pet park at Crossings at Irving",
+  amenities_alt6:
+    "Pet-friendly community and pet park at Crossings at Irving apartments",
 
   // ==============================
   // FLOOR PLAN IMAGES

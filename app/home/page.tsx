@@ -141,41 +141,23 @@ export default function Home() {
 
   const getAmenityDescription = (title = "") => {
     const descriptions: Record<string, string> = {
-      "Fitness Center":
-        "Stay active close to home with a convenient community fitness center designed to support your everyday wellness routine.",
+      "Open Area & Courts":
+        "Stay active outdoors with open recreation areas and community courts designed for sports, fitness, and everyday outdoor enjoyment.",
 
-      "Resident Clubhouse & Lounge":
-        "Relax, gather, and connect with neighbors in the welcoming resident clubhouse and lounge at Crossings at Irving.",
+      "Resident Clubhouse & Meeting Room":
+        "Relax, gather, and connect with neighbors in the welcoming resident clubhouse and meeting room at Crossings at Irving.",
 
-      "Community Swimming Pool":
-        "Cool off and unwind at the community swimming pool, a relaxing outdoor space for sunny days and time spent close to home.",
+      "Resort-Style Swimming Pool":
+        "Cool off and unwind at the resort-style swimming pool, offering a relaxing outdoor space for sunny days and time spent close to home.",
 
-      "BBQ & Picnic Area":
-        "Enjoy outdoor meals and gatherings with convenient BBQ and picnic areas designed for relaxing with family and friends.",
+      "Recreational Area & Playground":
+        "Enjoy outdoor recreation with inviting community spaces and a playground designed for families, children, and everyday enjoyment.",
 
-      "Pet Park":
-        "Give your four-legged companions room to play and enjoy the outdoors in the community's pet-friendly park area.",
+      "Dedicated Pet Bark Park":
+        "Give your four-legged companions room to play, exercise, and enjoy the outdoors in the community's dedicated pet-friendly bark park.",
 
-      "Package Locker Service":
-        "Make deliveries more convenient with package locker service, providing residents with an easy way to retrieve packages.",
-
-      "Sports Court":
-        "Stay active outdoors with a community sports court offering residents another convenient way to enjoy recreation close to home.",
-
-      Playground:
-        "Enjoy outdoor recreation with a community playground designed to provide an inviting space for families and children.",
-
-      "Tennis Court":
-        "Enjoy an active lifestyle with a community tennis court available for recreation and outdoor play.",
-
-      "Volleyball Court":
-        "Get outside and enjoy a friendly game with access to a community volleyball court.",
-
-      "Laundry Facilities":
-        "Enjoy added everyday convenience with on-site laundry facilities available within the Crossings at Irving community.",
-
-      "Controlled Access":
-        "Enjoy added peace of mind with controlled community access designed to provide residents with a comfortable living environment.",
+      "Secure Package Lockers":
+        "Make deliveries more convenient with secure package lockers, providing residents with an easy and convenient way to retrieve their packages.",
     };
 
     return descriptions[title] ?? "";
