@@ -26,14 +26,14 @@ export const siteConfig = {
 export const lookLeaseSpecial = {
   id: "look",
   badge: "LOOK & LEASE SPECIAL",
-  text: "1 Month Free! 1-bedroom from $999 | Save $200 every month on 2-bedrooms ! Move in by September 30th !",
+  text: "1 Month Free! 1-Bedroom from $999 | Save $200 every month on 2-bedrooms! Move in by September 30th!",
 };
 
 export const floorPlansSpecial = {
   id: "floor-plans-special",
   badge: "LOOK & LEASE SPECIAL",
   headline: "Special Promotion - Huge Specials",
-  badges: ["1 Month Free ", " 1BR from $999", "2BR Save $200/mo"],
+  badges: [" 1BR from $999", "2BR Save $200/mo"],
   phone: "(972) 457-0421",
   tel: "tel:+19724570421",
 };
@@ -44,7 +44,7 @@ export const lookLeaseOffer = {
   title: "Look & Lease Special",
   subtext:
     "Receive 1 month free and ongoing monthly discounts on select homes.",
-  highlight: " Must move in by September 30, 2026 !",
+  highlight: " Must move in by September 30,2026!",
   buttonText: "Call Now: (972) 457-0421",
   buttonHref: "tel:+19724570421",
 };
@@ -310,7 +310,7 @@ export const images = {
   floor3: "/images/plan/1/3.webp",
   floor4: "/images/plan/1/4.webp",
   floor5: "/images/plan/2/2.webp",
-  floor6: "/images/plan/2/2.webp",
+  floor6: "/images/plan/2/1.webp",
   floor7: "/images/plan/2/1.webp",
 
   floor_alt1:
@@ -341,10 +341,21 @@ export const images = {
   blog1: "/images/blog/1.webp",
   blog2: "/images/blog/2.webp",
   blog3: "/images/blog/3.webp",
+  blog4: "/images/blog/4.webp",
+  blog5: "/images/blog/5.webp",
+  blog6: "/images/blog/6.webp",
 
-  blog_alt1: "Must-Try Dining & Global Flavors in Irving & Las Colinas 1",
-  blog_alt2: "Exploring Mandalay Canal Walk & Local Irving Parks 1",
-  blog_alt3: "Weekend Guide to Toyota Music Factory & Las Colinas 1",
+  blog_alt1: "Must-Try Dining & Global Flavors in Irving & Las Colinas",
+
+  blog_alt2: "Exploring Mandalay Canal Walk & Local Irving Parks",
+
+  blog_alt3: "Weekend Guide to Toyota Music Factory & Las Colinas",
+
+  blog_alt4: "An Insider’s Look at Modern Living in Irving",
+
+  blog_alt5: "Top Coffee Spots & Cozy Work Cafés Around Town",
+
+  blog_alt6: "Quick Escapes: Lake Carolyn & DFW Waterfront Spots",
 };
 
 // ======================================================
@@ -1395,23 +1406,57 @@ export const posts: Post[] = [
     author: "Crossings at Irving Team",
     date: "",
 
-    title: "Discover Outdoor Recreation Around Irving",
+    title: "Exploring Mandalay Canal Walk & Local Irving Parks",
 
     description:
-      "Explore parks, outdoor recreation, and green spaces around Irving while enjoying convenient access to everyday destinations from Crossings at Irving.",
+      "Plan your morning run, dog-friendly weekend strolls, or peaceful park adventures along the scenic Mandalay Canal Walk and nearby Irving green spaces.",
 
     img: images.blog2,
 
     content: [
-      "Living at Crossings at Irving puts residents within convenient reach of outdoor recreation throughout Irving and the surrounding DFW area.",
+      "Living at Crossings at Irving puts residents within convenient reach of parks, walking trails, green spaces, and outdoor destinations throughout Irving and the surrounding DFW area.",
 
-      "Whether you enjoy an early morning walk, an afternoon outdoors, or a weekend activity with friends and family, Irving offers plenty of opportunities to enjoy the outdoors.",
+      "The Mandalay Canal Walk is a popular destination for enjoying a relaxing stroll, scenic surroundings, and time outdoors. It offers an inviting setting for morning walks, casual afternoons, and weekend outings.",
 
-      "The community itself also provides recreational amenities designed to complement everyday living, giving residents convenient ways to relax and stay active close to home.",
+      "Irving also offers a variety of local parks and recreational spaces where residents can enjoy walking, jogging, spending time with friends and family, or simply taking a break from a busy schedule.",
 
-      "With Crossings at Irving as your home base, it is easy to combine comfortable apartment living with outdoor activities and weekend adventures throughout the DFW area.",
+      "For pet owners and outdoor enthusiasts, nearby green spaces provide opportunities to get outside and enjoy fresh air while staying close to home.",
+
+      "Crossings at Irving also provides community amenities that support an active lifestyle, making it easy to balance outdoor adventures with convenient apartment living.",
+
+      "Whether you're looking for a peaceful morning walk, a weekend park visit, or a scenic place to unwind, Irving offers plenty of ways to enjoy the outdoors from your convenient home base at Crossings at Irving.",
     ],
   },
+
+  {
+    category: "Community",
+    readTime: "4 min",
+    initials: "CI",
+    author: "Crossings at Irving Team",
+    date: "",
+
+    title: "Weekend Guide to Toyota Music Factory & Las Colinas",
+
+    description:
+      "Your essential guide to live concerts, open-air dining, cinema nights, and premier entertainment hubs throughout Las Colinas and Irving.",
+
+    img: images.blog3,
+
+    content: [
+      "Living at Crossings at Irving makes it easy to enjoy the entertainment, dining, and community experiences available throughout Irving and Las Colinas.",
+
+      "Toyota Music Factory is a popular destination for live concerts, entertainment, dining, and special events. Its combination of music, restaurants, and gathering spaces makes it a convenient choice for weekend plans.",
+
+      "Las Colinas also offers a variety of restaurants, cafés, entertainment venues, and places to spend time with friends and family. From casual afternoons to evenings out, there are plenty of local experiences to discover.",
+
+      "The surrounding area provides opportunities to combine entertainment with dining and outdoor activities, making it easy to create a full weekend itinerary without traveling far from home.",
+
+      "Whether you're attending a concert, meeting friends for dinner, watching a movie, or exploring local attractions, the Irving and Las Colinas area offers plenty of ways to enjoy your free time.",
+
+      "With Crossings at Irving as your home base, residents can stay connected to the entertainment and community experiences that make the DFW area an exciting place to live.",
+    ],
+  },
+
   {
     category: "Local Life",
     readTime: "4 min",
@@ -1419,21 +1464,83 @@ export const posts: Post[] = [
     author: "Crossings at Irving Team",
     date: "",
 
-    title: "A Weekend Guide to Shopping & Dining in Irving",
+    title: "An Insider’s Look at Modern Living in Irving",
 
     description:
-      "Discover convenient shopping, dining, entertainment, and everyday destinations around Irving and the surrounding DFW area.",
+      "Discover how our central neighborhood balances peaceful residential comfort with effortless connectivity to DFW destinations, dining, and everyday essentials.",
 
-    img: images.blog3,
+    img: images.blog4,
 
     content: [
-      "One of the advantages of living at Crossings at Irving is convenient access to shopping, restaurants, entertainment, and everyday services throughout Irving.",
+      "Modern living in Irving is about having the comforts of home while staying connected to the places that matter every day. Crossings at Irving provides a convenient residential setting for enjoying both.",
 
-      "Golden Pioneer Plaza and Irving West are among the nearby shopping destinations where residents can take care of everyday errands, browse local businesses, and enjoy a casual afternoon away from home.",
+      "The surrounding neighborhood offers access to shopping, restaurants, entertainment, parks, schools, transportation, and everyday services, helping residents simplify their daily routines.",
 
-      "From quick meals and casual dining to shopping and entertainment, the surrounding Irving area provides plenty of options for weekends and everyday activities.",
+      "For professionals and students, Irving's location provides convenient connections to major employment centers, educational institutions, and destinations throughout the Dallas-Fort Worth area.",
 
-      "Crossings at Irving offers a convenient home base for exploring local destinations while keeping the comforts of home close by.",
+      "Residents can enjoy a balance between peaceful time at home and easy access to local activities. Whether you're running errands, meeting friends, enjoying a meal, or exploring the city, many destinations are within convenient reach.",
+
+      "Community amenities at Crossings at Irving add to the everyday experience, providing spaces to relax, stay active, socialize, and enjoy time at home.",
+
+      "For those looking for comfortable apartment living with convenient access to Irving and the greater DFW area, Crossings at Irving offers a practical home base for modern everyday life.",
+    ],
+  },
+
+  {
+    category: "Culture",
+    readTime: "4 min",
+    initials: "CI",
+    author: "Crossings at Irving Team",
+    date: "",
+
+    title: "Top Coffee Spots & Cozy Work Cafés Around Town",
+
+    description:
+      "We highlight top neighborhood spots for artisan roasts, weekend brunch bites, and quiet spaces to catch up on work around Irving and Las Colinas.",
+
+    img: images.blog5,
+
+    content: [
+      "Coffee culture is an important part of everyday life, whether you're starting your morning, meeting a friend, working remotely, or simply looking for a comfortable place to relax.",
+
+      "Irving and Las Colinas offer a variety of cafés and coffee spots where residents can enjoy freshly prepared drinks, light meals, pastries, and casual places to spend a few hours.",
+
+      "For remote professionals and students, a comfortable café can provide a refreshing change of scenery from working at home. Many local spots offer relaxed environments that are suitable for catching up on emails, studying, or having informal meetings.",
+
+      "Weekend brunch is another great way to explore the local café scene. From coffee and pastries to breakfast favorites and casual lunch options, there are plenty of opportunities to discover new neighborhood favorites.",
+
+      "The convenience of living at Crossings at Irving means residents can easily explore coffee shops and cafés throughout Irving and Las Colinas while staying close to home.",
+
+      "Whether you prefer a quiet morning coffee, a productive work session, or a relaxed weekend brunch, the local café scene offers plenty of ways to enjoy the community around Crossings at Irving.",
+    ],
+  },
+
+  {
+    category: "City Life",
+    readTime: "4 min",
+    initials: "CI",
+    author: "Crossings at Irving Team",
+    date: "",
+
+    title: "Quick Escapes: Lake Carolyn & DFW Waterfront Spots",
+
+    description:
+      "Spend a sunny afternoon out on the water, rent an electric cruiser, or picnic lakeside with a quick and easy trip around Lake Carolyn and the DFW waterfront.",
+
+    img: images.blog6,
+
+    content: [
+      "Sometimes the best weekend escape is a short trip close to home. Lake Carolyn and other waterfront destinations around the DFW area offer easy opportunities to relax, explore, and enjoy time outdoors.",
+
+      "Lake Carolyn is a scenic destination in Las Colinas where visitors can enjoy waterfront views, walking areas, dining, and activities around the lake.",
+
+      "A sunny afternoon can be spent walking along the waterfront, enjoying a meal nearby, meeting friends, or simply taking in the scenery. The area provides a relaxing change of pace without requiring a long drive.",
+
+      "For those looking for something more active, waterfront activities can add a little adventure to the weekend. Exploring the lake and surrounding areas provides another way to experience the Las Colinas community.",
+
+      "The broader DFW area also offers additional waterfront destinations and outdoor spaces for day trips and weekend activities, giving residents plenty of options to explore beyond their neighborhood.",
+
+      "With Crossings at Irving as a convenient home base, residents can enjoy the best of both worlds: comfortable apartment living close to home and easy access to outdoor escapes throughout Irving and the DFW area.",
     ],
   },
 ];
@@ -1441,31 +1548,31 @@ export const posts: Post[] = [
 // FEATURED BLOG POST
 // ======================================================
 export const featuredPost: Post = {
-  category: "Local Life",
-  readTime: "5 min",
+  category: "Local Eats",
+  readTime: "4 min",
   initials: "CI",
   author: "Crossings at Irving Team",
   date: "",
 
-  title: "Discover Local Life Around Crossings at Irving",
+  title: "Must-Try Dining & Global Flavors in Irving & Las Colinas",
 
   description:
-    "Explore shopping, dining, recreation, education, airports, and everyday conveniences surrounding Crossings at Irving in Irving, Texas.",
+    "From authentic Texas flavors and vibrant street tacos to world-class cuisine, explore the standout dining experiences around Irving and Las Colinas.",
 
   img: images.blog1,
 
   content: [
-    "Living at Crossings at Irving means enjoying a comfortable home in a convenient Irving location. Residents can take advantage of community amenities while staying connected to shopping, dining, education, recreation, and destinations throughout the DFW area.",
+    "Living at Crossings at Irving puts residents within convenient reach of the diverse dining experiences found throughout Irving and Las Colinas. From casual neighborhood favorites to international restaurants, there are plenty of options to discover close to home.",
 
-    "The surrounding Irving area offers plenty of opportunities to shop, dine, exercise, and enjoy the outdoors. Nearby destinations such as Golden Pioneer Plaza and Irving West provide convenient options for everyday errands, shopping, and local dining.",
+    "Irving and Las Colinas are known for their wide variety of global flavors. You can explore Mexican, Indian, Mediterranean, Asian, American, and other international cuisines, making it easy to enjoy something different for lunch, dinner, or a weekend outing.",
 
-    "Education and employment destinations are also within convenient reach. North Lake College, the University of Dallas, and Parker University are among the nearby educational institutions, making the location practical for students and professionals.",
+    "For those looking to experience local Texas flavors, the area offers restaurants serving classic comfort food, grilled specialties, burgers, barbecue-inspired dishes, and other Texas favorites. These local dining spots provide an easy way to experience the character of the region.",
 
-    "Travel throughout the region is convenient from Crossings at Irving. DFW International Airport and Dallas Love Field provide access to regional and national destinations, while the surrounding road network connects residents with Irving and the greater Dallas-Fort Worth area.",
+    "Las Colinas also offers a lively dining atmosphere with restaurants, cafés, patios, and entertainment destinations. The area around the Mandalay Canal and Toyota Music Factory makes it easy to combine a meal with an evening of entertainment or a relaxing walk.",
 
-    "Closer to home, Crossings at Irving offers amenities designed for everyday living, including a swimming pool, fitness center, resident clubhouse, sports and recreation areas, BBQ and picnic spaces, pet-friendly areas, package locker service, and resident community spaces.",
+    "Whether you're grabbing a quick coffee, meeting friends for dinner, celebrating a special occasion, or exploring a new restaurant, Irving offers a wide range of dining experiences for different tastes and lifestyles.",
 
-    "Whether you're exploring Irving, commuting to work or school, enjoying a meal with friends, or relaxing at home, Crossings at Irving provides a convenient home base for experiencing the lifestyle and opportunities of the DFW area.",
+    "At Crossings at Irving, residents can enjoy the convenience of having dining, entertainment, shopping, and everyday destinations within easy reach, making it a comfortable home base for discovering everything Irving and the surrounding DFW area have to offer.",
   ],
 };
 
@@ -1483,11 +1590,12 @@ export const articles = [
     authorBg: "bg-[#E09428]/10 text-[#E09428]",
     authorName: "Crossings at Irving Team",
     date: "",
-    title: "Must-Try Dining & Local Flavors in Irving",
+    title: "Must-Try Dining & Global Flavors in Irving & Las Colinas",
     description:
-      "Discover local dining favorites, Texas-inspired flavors, and diverse restaurants near Crossings at Irving, with easy access to food and entertainment throughout Irving and the DFW area.",
+      "From authentic Texas flavors and vibrant street tacos to world-class cuisine, explore the standout dining experiences around Irving and Las Colinas.",
     image: "/images/blog/1.webp",
   },
+
   {
     id: 2,
     category: "Outdoors",
@@ -1497,23 +1605,69 @@ export const articles = [
     authorBg: "bg-[#2a5a8f]/10 text-[#2a5a8f]",
     authorName: "Crossings at Irving Team",
     date: "",
-    title: "Discover Outdoor Recreation Around Irving",
+    title: "Exploring Mandalay Canal Walk & Local Irving Parks",
     description:
-      "Explore parks, outdoor recreation, and green spaces around Irving while enjoying convenient access to everyday destinations from Crossings at Irving.",
+      "Plan your morning run, dog-friendly weekend strolls, or peaceful park adventures along the scenic Mandalay Canal Walk and nearby Irving green spaces.",
     image: "/images/blog/2.webp",
   },
+
   {
     id: 3,
-    category: "Local Life",
+    category: "Community",
     categoryColor: "bg-[#1E3872]/10 text-[#1E3872]",
     readTime: "4 min",
     authorInitials: "CI",
     authorBg: "bg-[#1E3872]/10 text-[#1E3872]",
     authorName: "Crossings at Irving Team",
     date: "",
-    title: "A Weekend Guide to Shopping & Dining in Irving",
+    title: "Weekend Guide to Toyota Music Factory & Las Colinas",
     description:
-      "Discover convenient shopping, dining, entertainment, and everyday destinations around Irving and the surrounding DFW area.",
+      "Your essential guide to live concerts, open-air dining, cinema nights, and premier entertainment hubs throughout Las Colinas and Irving.",
     image: "/images/blog/3.webp",
+  },
+
+  {
+    id: 4,
+    category: "Local Life",
+    categoryColor: "bg-[#E09428]/10 text-[#E09428]",
+    readTime: "4 min",
+    authorInitials: "CI",
+    authorBg: "bg-[#E09428]/10 text-[#E09428]",
+    authorName: "Crossings at Irving Team",
+    date: "",
+    title: "An Insider’s Look at Modern Living in Irving",
+    description:
+      "Discover how our central neighborhood balances peaceful residential comfort with effortless connectivity to DFW destinations, dining, and everyday essentials.",
+    image: "/images/blog/4.webp",
+  },
+
+  {
+    id: 5,
+    category: "Culture",
+    categoryColor: "bg-[#2a5a8f]/10 text-[#2a5a8f]",
+    readTime: "4 min",
+    authorInitials: "CI",
+    authorBg: "bg-[#2a5a8f]/10 text-[#2a5a8f]",
+    authorName: "Crossings at Irving Team",
+    date: "",
+    title: "Top Coffee Spots & Cozy Work Cafés Around Town",
+    description:
+      "We highlight top neighborhood spots for artisan roasts, weekend brunch bites, and quiet spaces to catch up on work around Irving and Las Colinas.",
+    image: "/images/blog/5.webp",
+  },
+
+  {
+    id: 6,
+    category: "City Life",
+    categoryColor: "bg-[#1E3872]/10 text-[#1E3872]",
+    readTime: "4 min",
+    authorInitials: "CI",
+    authorBg: "bg-[#1E3872]/10 text-[#1E3872]",
+    authorName: "Crossings at Irving Team",
+    date: "",
+    title: "Quick Escapes: Lake Carolyn & DFW Waterfront Spots",
+    description:
+      "Spend a sunny afternoon out on the water, rent an electric cruiser, or picnic lakeside with a quick and easy trip around Lake Carolyn and the DFW waterfront.",
+    image: "/images/blog/6.webp",
   },
 ];

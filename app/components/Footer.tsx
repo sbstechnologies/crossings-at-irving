@@ -211,21 +211,15 @@ export default function Footer() {
               <h4 className="text-[15px] tracking-[0.18em] text-[#E09428] mb-8 font-[Plus_Jakarta_Sans]">
                 LOCATION
               </h4>
-
-              {/* MAP */}
               <div className="rounded-[24px] overflow-hidden h-[220px] border border-white/10">
                 <iframe
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(
-                    "Crossings at Irving, 1900 Estrada Pkwy, Irving, TX 75061",
-                  )}&output=embed`}
-                  width="100%"
-                  height="450"
+                  src="https://www.google.com/maps?q=Crossings+at+Irving,+1900+Estrada+Pkwy,+Irving,+TX+75061&output=embed"
+                  className="w-full h-full"
                   style={{ border: 0 }}
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Crossings at Irving, Irving Texas"
-                  className="w-full"
                 />
               </div>
 
