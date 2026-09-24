@@ -313,7 +313,7 @@ export const images = {
   floor3: "/images/plan/1/3.webp",
   floor4: "/images/plan/1/4.webp",
   floor5: "/images/plan/2/2.webp",
-  floor6: "/images/plan/2/1.webp",
+  floor6: "/images/plan/2/2.webp",
   floor7: "/images/plan/2/1.webp",
 
   floor_alt1:
@@ -886,7 +886,7 @@ export const plans = {
     title: "Milan · 2 Bedrooms · 2 Baths",
     price: "$1,340/mo",
     area: "773 sq ft",
-    img: images.floor6,
+    img: images.floor7,
     bed: "2 Bedrooms",
     bath: "2 Baths",
   },
@@ -1084,7 +1084,7 @@ export const floorPlans: FloorPlan[] = [
       "Spacious Living Room",
       "+2 more",
     ],
-    images: [images.floor6],
+    images: [images.floor7],
     interiorImages: [images.home36, images.home37, images.home38],
     tour: "https://youtu.be/yY1qisriBYw?si=v5xxvsvvXoS_aOpn",
   },
