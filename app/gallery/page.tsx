@@ -58,12 +58,10 @@ export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("All");
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-  // Filters out the 18th item globally (index 17 corresponds to 6th row, 3rd column in a 3-column setup)
-  const filteredGallery = (
+  const filteredGallery =
     activeFilter === "All"
       ? gallery
-      : gallery.filter((item) => item.category === activeFilter)
-  ).filter((_, index) => index !== 17);
+      : gallery.filter((item) => item.category === activeFilter);
 
   const filters: { label: FilterType; count: string }[] = [
     {
