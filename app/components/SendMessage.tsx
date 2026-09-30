@@ -28,7 +28,7 @@ export default function SendMessage() {
       email: formData.get("email")?.toString().trim() ?? "",
       phone: formData.get("phone")?.toString().trim() ?? "",
       resident:
-        formData.get("resident")?.toString().trim() ?? "Current Resident",
+        formData.get("resident")?.toString().trim() ?? "Future Resident",
       subject: formData.get("subject")?.toString().trim() ?? "",
       message: formData.get("message")?.toString().trim() ?? "",
     };
@@ -175,11 +175,12 @@ export default function SendMessage() {
                 <select
                   name="resident"
                   disabled={loading}
-                  defaultValue="Current Resident"
+                  defaultValue="Future Resident"
                   className="w-full rounded-xl border border-[#cfd6e2] bg-white px-4 py-3 text-[15px] text-black outline-none transition-colors focus:border-[#1E3872] focus:ring-2 focus:ring-[#1E3872]/10"
                 >
-                  <option value="Current Resident">Current Resident</option>
+                  {" "}
                   <option value="Future Resident">Future Resident</option>
+                  <option value="Current Resident">Current Resident</option>
                 </select>
               </div>
 
