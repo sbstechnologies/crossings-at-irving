@@ -7,7 +7,7 @@ import { lookLeaseOffer, siteConfig } from "@/app/config/content";
 import FooterLegalBar from "@/app/components/FooterLegalBar";
 
 import LegalContent from "@/app/components/LegalContent";
-import HousingVoucher from "@/app/components/HousingVoucher";
+
 import OfferCTA from "@/app/components/OfferCTA";
 
 export default function Contact() {
@@ -33,8 +33,6 @@ export default function Contact() {
       </section>
 
       <LegalContent />
-
-      <HousingVoucher />
 
       {/* ===== OFFER CTA ===== */}
       <OfferCTA
