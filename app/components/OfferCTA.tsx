@@ -3,6 +3,8 @@ type OfferCTAProps = {
   title: string;
   subtext: string;
   highlight?: string;
+  highlight_text?: string;
+  suffix?: string;
   buttonText: string;
   buttonHref: string;
 };
@@ -12,6 +14,8 @@ export default function OfferCTA({
   title,
   subtext,
   highlight,
+  highlight_text,
+  suffix,
   buttonText,
   buttonHref,
 }: OfferCTAProps) {
@@ -20,24 +24,69 @@ export default function OfferCTA({
       <div className="mx-auto flex max-w-[1600px] flex-col gap-6 rounded-[26px] bg-[#db8d1f] px-8 py-7 md:px-12 md:py-9 lg:flex-row lg:items-center lg:justify-between">
         {/* CONTENT */}
         <div>
-          <p className="mb-4 font-[Plus_Jakarta_Sans] text-xs font-semibold tracking-[0.3em] text-white/90">
+          {/* TAGLINE */}
+          <p className="mb-4 font-[Plus_Jakarta_Sans] text-xs font-semibold uppercase tracking-[0.3em] text-white/90">
             {tagline}
           </p>
 
-          <h2 className="font-[Instrument_Serif] text-[36px] leading-none text-white md:text-[52px]">
+          {/* TITLE */}
+          <h2 className="font-[Instrument_Serif] text-[38px] leading-[0.95] text-white sm:text-[44px] md:text-[52px]">
             {title}
           </h2>
 
-          <p className="mt-3 max-w-[900px] font-[Plus_Jakarta_Sans] text-[17px] leading-relaxed text-white md:text-[18px]">
-            {subtext}
-            {highlight && (
-              <span className="mt-1 block font-bold text-[#f5f2ed]">
-                {highlight}
-              </span>
+          {/* OFFER CONTENT */}
+          <div className="mt-4 max-w-[900px] font-[Plus_Jakarta_Sans]">
+            {/* SUBTEXT */}
+            {subtext && (
+              <div className="mt-5 inline-flex max-w-[900px] items-center rounded-2xl bg-[#1E3872] px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.2)]">
+                <p className="font-[Plus_Jakarta_Sans] text-[15px] font-bold leading-6 text-white md:text-[17px]">
+                  {subtext}
+                </p>
+              </div>
             )}
-          </p>
-        </div>
 
+            {/* FLOOR PLAN PRICES */}
+            {(highlight || highlight_text) && (
+              <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                {highlight && (
+                  <div className="inline-flex w-fit rounded-xl border border-white/20 bg-white/10 px-4 py-2.5">
+                    <span className="text-sm font-bold text-white md:text-[15px]">
+                      {highlight}
+                    </span>
+                  </div>
+                )}
+
+                {highlight_text && (
+                  <div className="inline-flex w-fit rounded-xl border border-white/20 bg-white/10 px-4 py-2.5">
+                    <span className="text-sm font-bold text-white md:text-[15px]">
+                      {highlight_text}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* DEADLINE */}
+            {suffix && (
+              <div className="mt-4 flex items-center gap-2">
+                <svg
+                  className="h-4 w-4 shrink-0 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+
+                <p className="text-sm font-semibold text-white md:text-[15px]">
+                  {suffix}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
         {/* BUTTON */}
         <div className="shrink-0">
           <a

@@ -35,8 +35,8 @@ export const floorPlansSpecial = {
   headline: "Special Promotion - Huge Specials",
   badges: [
     "🎉 1 MONTH FREE + $100 OFF EVERY FLOOR PLAN!",
-    "1-Bedrooms starting at $999",
-    "2-Bedrooms starting at $1,325",
+    "1-Bedrooms starting at $999.",
+    "2-Bedrooms starting at $1,325.",
   ],
   phone: "(972) 457-0421",
   tel: "tel:+19724570421",
@@ -47,7 +47,9 @@ export const lookLeaseOffer = {
   tagline: "LIMITED TIME OFFER",
   title: "Look & Lease Special",
   subtext: "🎉 1 MONTH FREE + $100 OFF EVERY FLOOR PLAN!",
-  highlight: "🏡 Must move in by October 31, 2026!",
+  highlight: "1-Bedrooms starting at $999.",
+  highlight_text: " 2-Bedrooms starting at $1,325.",
+  suffix: " Must move in by October 31, 2026!",
   buttonText: "Call Now: (972) 457-0421",
   buttonHref: "tel:+19724570421",
 };

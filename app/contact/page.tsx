@@ -222,6 +222,8 @@ export default function Contact() {
         title={lookLeaseOffer.title}
         subtext={lookLeaseOffer.subtext}
         highlight={lookLeaseOffer.highlight}
+        highlight_text={lookLeaseOffer.highlight_text}
+        suffix={lookLeaseOffer.suffix}
         buttonText={lookLeaseOffer.buttonText}
         buttonHref={lookLeaseOffer.buttonHref}
       />

@@ -52,72 +52,109 @@ export default function PromoCardWidget() {
         </div>
 
         {/* Content Block */}
-        <div className="flex flex-col gap-2.5 p-4 pb-4 pt-3.5">
-          {/* Item Row 1 */}
-          <div className="flex items-start gap-2 rounded-[10px] border border-[rgba(224,148,40,0.22)] bg-[rgba(224,148,40,0.08)] p-2.5 px-3">
-            <Sparkles size={13} className="mt-[1px] shrink-0 text-[#E09428]" />
+        <div className="flex flex-col gap-3 p-4 pt-3.5">
+          {/* OFFER CARD 1 */}
+          <div className="group rounded-[14px] border border-[#E09428]/20 bg-[#E09428]/[0.07] p-3.5 transition-all duration-300 hover:-translate-y-[1px] hover:border-[#E09428]/30 hover:bg-[#E09428]/[0.10]">
+            <div className="flex items-start gap-3">
+              <div className="mt-[1px] flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#E09428]/10">
+                <Sparkles
+                  size={14}
+                  strokeWidth={2.2}
+                  className="text-[#E09428]"
+                />
+              </div>
 
-            <div>
-              <p className="m-0 font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold tracking-[-0.01em] text-[#E09428]">
-                {PromoCardWidgetConfig.cards[0].title}
-              </p>
+              <div className="min-w-0">
+                <p className="m-0 font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold tracking-[-0.01em] text-[#C97816]">
+                  {PromoCardWidgetConfig.cards[0].title}
+                </p>
 
-              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[10px] leading-[1.45] text-[#5A6260]">
-                {PromoCardWidgetConfig.cards[0].text}{" "}
-                <strong className="font-bold text-[#2D3230]">
-                  {PromoCardWidgetConfig.cards[0].highlight} <br />
-                  {PromoCardWidgetConfig.cards[0].highlight_text}
-                </strong>{" "}
-                <br />
-                {PromoCardWidgetConfig.cards[0].suffix} <br />
-              </p>
+                <p className="m-0 mt-1 font-['Plus_Jakarta_Sans'] text-[10px] leading-[1.55] text-[#5A6260]">
+                  {PromoCardWidgetConfig.cards[0].text}
+
+                  <span className="mt-1.5 block font-bold text-[#252A28]">
+                    {PromoCardWidgetConfig.cards[0].highlight}
+                    <br />
+                    {PromoCardWidgetConfig.cards[0].highlight_text}
+                  </span>
+
+                  <span className="mt-1 block text-[#5A6260]">
+                    {PromoCardWidgetConfig.cards[0].suffix}
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Item Row 2 */}
-          <div className="flex items-start gap-2 rounded-[10px] border border-[rgba(30,56,114,0.14)] bg-[rgba(30,56,114,0.06)] p-2.5 px-3">
-            <Sparkles size={13} className="mt-[1px] shrink-0 text-[#1E3872]" />
+          {/* OFFER CARD 2 */}
+          <div className="group rounded-[14px] border border-[#1E3872]/15 bg-[#1E3872]/[0.055] p-3.5 transition-all duration-300 hover:-translate-y-[1px] hover:border-[#1E3872]/25 hover:bg-[#1E3872]/[0.08]">
+            <div className="flex items-start gap-3">
+              <div className="mt-[1px] flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#1E3872]/10">
+                <Sparkles
+                  size={14}
+                  strokeWidth={2.2}
+                  className="text-[#1E3872]"
+                />
+              </div>
 
-            <div>
-              <p className="m-0 font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold tracking-[-0.01em] text-[#1E3872]">
-                {PromoCardWidgetConfig.cards[1].title}
-              </p>
+              <div className="min-w-0">
+                <p className="m-0 font-['Plus_Jakarta_Sans'] text-[12px] font-extrabold tracking-[-0.01em] text-[#1E3872]">
+                  {PromoCardWidgetConfig.cards[1].title}
+                </p>
 
-              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[10px] leading-[1.45] text-[#5A6260]">
-                {PromoCardWidgetConfig.cards[1].text} <br />
-                <strong className="font-bold text-[#2D3230]">
-                  {PromoCardWidgetConfig.cards[1].highlight} <br />
-                  {PromoCardWidgetConfig.cards[1].highlight_text}
-                </strong>{" "}
-                <br />
-                <strong className="font-bold text-[#2D3230]">
-                  {PromoCardWidgetConfig.cards[1].suffix}
-                </strong>{" "}
-              </p>
+                <p className="m-0 mt-1 font-['Plus_Jakarta_Sans'] text-[10px] leading-[1.55] text-[#5A6260]">
+                  {PromoCardWidgetConfig.cards[1].text}
+
+                  <span className="mt-1.5 block font-bold text-[#252A28]">
+                    {PromoCardWidgetConfig.cards[1].highlight}
+                    <br />
+                    {PromoCardWidgetConfig.cards[1].highlight_text}
+                  </span>
+
+                  <span className="mt-1 block font-bold text-[#1E3872]">
+                    {PromoCardWidgetConfig.cards[1].suffix}
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* CTA Submit Button */}
+          {/* CTA */}
           <Link
             href={PromoCardWidgetConfig.applyLink}
             target="_blank"
             rel="noopener noreferrer"
+            className="
+      group mt-1 flex w-full items-center justify-center gap-2
+      rounded-[12px]
+      bg-[#1E3872]
+      px-4 py-3
+      font-['Plus_Jakarta_Sans']
+      text-[12px] font-bold tracking-[0.02em]
+      text-[#F5F2ED] no-underline
+      shadow-[0_6px_20px_rgba(30,56,114,0.28)]
+      transition-all duration-300
+      hover:-translate-y-[1px]
+      hover:bg-[#162B5E]
+      hover:shadow-[0_8px_24px_rgba(30,56,114,0.36)]
+      active:translate-y-0
+    "
           >
-            <button
-              type="button"
-              className="flex items-center justify-center gap-[7px] w-full py-[11px] rounded-[11px] bg-[#1E3872] text-[#F5F2ED] font-['Plus_Jakarta_Sans'] text-[13px] font-bold tracking-[0.01em] border-none cursor-pointer shadow-[0_4px_18px_rgba(30,56,114,0.38)] transition-all hover:bg-[#162B5E]"
-            >
-              {PromoCardWidgetConfig.buttonText}
-              <ArrowRight size={13} className="text-white" />
-            </button>
+            <span>{PromoCardWidgetConfig.buttonText}</span>
+
+            <ArrowRight
+              size={14}
+              strokeWidth={2.3}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </Link>
 
-          {/* Call Footnote Link */}
-          <p className="font-['Plus_Jakarta_Sans'] text-[10px] text-[rgba(90,98,96,0.5)] text-center m-0">
-            Call us ·{" "}
+          {/* PHONE */}
+          <p className="m-0 pt-0.5 text-center font-['Plus_Jakarta_Sans'] text-[10px] text-[#8A918E]">
+            Call us <span className="mx-1 text-[#C5C9C7]">·</span>
             <a
               href={siteConfig.tel}
-              className="text-[#1E3872] no-underline font-semibold hover:underline"
+              className="font-semibold text-[#1E3872] no-underline transition-colors hover:text-[#162B5E] hover:underline"
             >
               {siteConfig.phone}
             </a>
