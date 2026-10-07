@@ -62,13 +62,14 @@ export default function PromoCardWidget() {
                 {PromoCardWidgetConfig.cards[0].title}
               </p>
 
-              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[11px] leading-[1.45] text-[#5A6260]">
+              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[10px] leading-[1.45] text-[#5A6260]">
                 {PromoCardWidgetConfig.cards[0].text}{" "}
                 <strong className="font-bold text-[#2D3230]">
-                  {PromoCardWidgetConfig.cards[0].highlight}
-                </strong>
+                  {PromoCardWidgetConfig.cards[0].highlight} <br />
+                  {PromoCardWidgetConfig.cards[0].highlight_text}
+                </strong>{" "}
                 <br />
-                {PromoCardWidgetConfig.cards[0].suffix}
+                {PromoCardWidgetConfig.cards[0].suffix} <br />
               </p>
             </div>
           </div>
@@ -82,12 +83,16 @@ export default function PromoCardWidget() {
                 {PromoCardWidgetConfig.cards[1].title}
               </p>
 
-              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[11px] leading-[1.45] text-[#5A6260]">
+              <p className="m-0 mt-[2px] font-['Plus_Jakarta_Sans'] text-[10px] leading-[1.45] text-[#5A6260]">
                 {PromoCardWidgetConfig.cards[1].text} <br />
                 <strong className="font-bold text-[#2D3230]">
-                  {PromoCardWidgetConfig.cards[1].highlight}
+                  {PromoCardWidgetConfig.cards[1].highlight} <br />
+                  {PromoCardWidgetConfig.cards[1].highlight_text}
                 </strong>{" "}
-                {PromoCardWidgetConfig.cards[1].suffix}
+                <br />
+                <strong className="font-bold text-[#2D3230]">
+                  {PromoCardWidgetConfig.cards[1].suffix}
+                </strong>{" "}
               </p>
             </div>
           </div>
