@@ -468,7 +468,7 @@ export async function POST(request: Request) {
         font-weight:700;
       "
     >
-      ${escapeHtml(siteConfig.name)} - New Contact Form Submission
+       New Contact Form Submission
     </h1>
 
     <p
@@ -478,7 +478,7 @@ export async function POST(request: Request) {
         opacity:0.9;
       "
     >
-        ${escapeHtml(siteConfig.name)} - A new inquiry has been received from the website
+        A new inquiry has been received from the website - ${escapeHtml(siteConfig.website)} 
    
     </p>
   </div>
