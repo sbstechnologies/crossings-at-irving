@@ -1,3 +1,4 @@
+import { siteConfig } from "@/app/config/content";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -18,6 +19,12 @@ interface RateLimitEntry {
   count: number;
   resetAt: number;
 }
+
+const cstTime = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Chicago",
+  dateStyle: "full",
+  timeStyle: "medium",
+}).format(new Date());
 
 const rateLimitStore = new Map<string, RateLimitEntry>();
 
@@ -68,14 +75,20 @@ function formatPhoneNumber(phone: string): string {
   return phone || "Not Provided";
 }
 
-function getTrustedClientIp(request: Request): string | null {
+function getTrustedClientIp(request: Request): string {
+  // On Vercel, use the platform-provided client IP header when available.
+  // Only trust forwarding headers when your hosting platform sanitizes them.
+  const realIp = request.headers.get("x-real-ip")?.trim();
+  if (realIp) return realIp;
+
   const forwardedFor = request.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    const ip = forwardedFor.split(",")[0]?.trim();
+    if (ip) return ip;
+  }
 
-  if (!forwardedFor) return null;
-
-  const ip = forwardedFor.split(",")[0]?.trim();
-
-  return ip || null;
+  // Allows local development where proxy IP headers may be absent.
+  return "unknown";
 }
 
 function checkRateLimit(ip: string) {
@@ -120,18 +133,30 @@ function checkRateLimit(ip: string) {
 
 async function verifyTurnstile(
   token: string,
-  remoteIp: string,
+  remoteIp?: string,
 ): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
 
-  if (!secret || !token) return false;
+  if (!secret) {
+    console.error(
+      "Turnstile configuration error: TURNSTILE_SECRET_KEY is missing.",
+    );
+    throw new Error("TURNSTILE_SECRET_MISSING");
+  }
+
+  if (!token || token.length > 2048) {
+    return false;
+  }
 
   try {
     const params = new URLSearchParams({
       secret,
       response: token,
-      remoteip: remoteIp,
     });
+
+    if (remoteIp && remoteIp !== "unknown") {
+      params.set("remoteip", remoteIp);
+    }
 
     const response = await fetch(
       "https://challenges.cloudflare.com/turnstile/v0/siteverify",
@@ -142,11 +167,14 @@ async function verifyTurnstile(
         },
         body: params,
         cache: "no-store",
-        signal: AbortSignal.timeout(5000),
+        signal: AbortSignal.timeout(10000),
       },
     );
 
-    if (!response.ok) return false;
+    if (!response.ok) {
+      console.error("Turnstile Siteverify returned HTTP", response.status);
+      throw new Error("TURNSTILE_SERVICE_UNAVAILABLE");
+    }
 
     const result: {
       success?: boolean;
@@ -154,12 +182,19 @@ async function verifyTurnstile(
       "error-codes"?: string[];
     } = await response.json();
 
-    if (!result.success) return false;
+    if (!result.success) {
+      // Do not log the secret or the submitted token.
+      console.warn(
+        "Turnstile rejected the token:",
+        result["error-codes"] ?? [],
+      );
+      return false;
+    }
 
     return true;
   } catch (error) {
-    console.error("Turnstile verification failed:", error);
-    return false;
+    console.error("Turnstile verification request failed:", error);
+    throw new Error("TURNSTILE_SERVICE_UNAVAILABLE");
   }
 }
 
@@ -289,16 +324,6 @@ export async function POST(request: Request) {
 
     const clientIp = getTrustedClientIp(request);
 
-    if (!clientIp) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Unable to process your request.",
-        },
-        { status: 400 },
-      );
-    }
-
     const limit = checkRateLimit(clientIp);
 
     if (!limit.allowed) {
@@ -318,13 +343,29 @@ export async function POST(request: Request) {
       );
     }
 
-    const verified = await verifyTurnstile(turnstileToken, clientIp);
+    let verified: boolean;
+
+    try {
+      verified = await verifyTurnstile(turnstileToken, clientIp);
+    } catch (error) {
+      console.error("Turnstile is temporarily unavailable:", error);
+
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Security verification is temporarily unavailable. Please try again shortly.",
+        },
+        { status: 503 },
+      );
+    }
 
     if (!verified) {
       return NextResponse.json(
         {
           success: false,
-          message: "Security verification failed. Please try again.",
+          message:
+            "Security verification failed. Please refresh the verification and try again.",
         },
         { status: 403 },
       );
@@ -395,7 +436,7 @@ export async function POST(request: Request) {
       to: toRecipients.join(", "),
       cc: ccRecipients.length ? ccRecipients.join(", ") : undefined,
       replyTo: email,
-      subject: `Contact Form - ${subject}`,
+      subject: `Contact Form - ${subject?.trim() || "General Inquiry"}`,
       text: [
         "New Contact Form Submission",
         "Crossings at Irving",
@@ -404,66 +445,308 @@ export async function POST(request: Request) {
         `Email: ${email}`,
         `Phone: ${formatPhoneNumber(phone)}`,
         `Resident Type: ${resident}`,
-        `Subject: ${subject}`,
+        `Subject: ${subject?.trim() || "General Inquiry"}`,
         `Submitted On: ${submittedAt}`,
         "",
         "Message:",
         message,
       ].join("\n"),
       html: `
-        <div style="font-family:Arial,sans-serif;color:#374151;max-width:700px;margin:auto;">
-          <div style="background:#1E3872;padding:24px;color:#fff;text-align:center;">
-            <h1>New Contact Form Submission</h1>
-            <p>Crossings at Irving</p>
-          </div>
+  <!-- Header -->
+  <div
+    style="
+      background:linear-gradient(135deg,#1E3872,#2E5AAC);
+      padding:30px;
+      text-align:center;
+      color:#ffffff;
+    "
+  >
+    <h1
+      style="
+        margin:0;
+        font-size:28px;
+        font-weight:700;
+      "
+    >
+      New Contact Form Submission
+    </h1>
 
-          <div style="padding:24px;">
-            <h2>Contact Details</h2>
-            <table style="width:100%;border-collapse:collapse;">
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;">Full Name</td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(fullName)}</td>
-              </tr>
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;">Email Address</td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">
-                  <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;">Phone Number</td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(formatPhoneNumber(phone))}</td>
-              </tr>
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;">Resident Type</td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(resident)}</td>
-              </tr>
-              <tr>
-                <td style="padding:10px;border-bottom:1px solid #eee;">Subject</td>
-                <td style="padding:10px;border-bottom:1px solid #eee;">${escapeHtml(subject)}</td>
-              </tr>
-              <tr>
-                <td style="padding:10px;">Submitted On</td>
-                <td style="padding:10px;">${escapeHtml(submittedAt)}</td>
-              </tr>
-            </table>
+    <p
+      style="
+        margin-top:8px;
+        font-size:14px;
+        opacity:0.9;
+      "
+    >
+        ${escapeHtml(siteConfig.name)} - A new inquiry has been received from the website
+   
+    </p>
+  </div>
 
-            <h2 style="margin-top:28px;">Message</h2>
-            <div style="background:#f9fafb;padding:20px;border:1px solid #e5e7eb;border-radius:8px;white-space:pre-wrap;">${escapeHtml(message)}</div>
+  <!-- Content -->
+  <div style="padding:30px;">
 
-            <p style="margin-top:24px;">
-              <a href="mailto:${escapeHtml(email)}" style="display:inline-block;background:#1E3872;color:#fff;padding:12px 20px;text-decoration:none;border-radius:6px;">Reply to ${escapeHtml(fullName)}</a>
-            </p>
-          </div>
+    <div
+      style="
+        background:#eef5ff;
+        border-left:4px solid #1E3872;
+        padding:15px 18px;
+        border-radius:8px;
+        margin-bottom:25px;
+        color:#374151;
+      "
+    >
+      A ${escapeHtml(
+        resident || "Future Resident",
+      )} has submitted a contact request.
+      Details are listed below.
+    </div>
 
-          <div style="background:#111827;color:#d1d5db;padding:20px;text-align:center;">
-            <strong style="color:#fff;">Crossings at Irving</strong>
-            <p>1900 Estrada Pkwy, Irving, TX 75061</p>
-            <p>(972) 457-0421</p>
-            <p>© ${new Date().getFullYear()} Crossings at Irving. All Rights Reserved.</p>
-          </div>
-        </div>
-      `,
+    <h3
+      style="
+        margin:0 0 20px;
+        color:#111827;
+        font-size:20px;
+      "
+    >
+      Contact Details
+    </h3>
+
+    <table
+      width="100%"
+      cellpadding="12"
+      cellspacing="0"
+      style="border-collapse:collapse;"
+    >
+
+      <tr>
+        <td
+          width="180"
+          style="
+            font-weight:600;
+            color:#6b7280;
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          Full Name
+        </td>
+
+        <td
+          style="
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          ${escapeHtml(fullName)}
+        </td>
+      </tr>
+
+      <tr>
+        <td
+          style="
+            font-weight:600;
+            color:#6b7280;
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          Email Address
+        </td>
+
+        <td
+          style="
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          <a
+            href="mailto:${escapeHtml(email)}"
+            style="
+              color:#1E3872;
+              text-decoration:none;
+            "
+          >
+            ${escapeHtml(email)}
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td
+          style="
+            font-weight:600;
+            color:#6b7280;
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          Phone Number
+        </td>
+
+        <td
+          style="
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          ${escapeHtml(formatPhoneNumber(phone || "Not Provided"))}
+        </td>
+      </tr>
+
+      <tr>
+        <td
+          style="
+            font-weight:600;
+            color:#6b7280;
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          I am a
+        </td>
+
+        <td
+          style="
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          ${escapeHtml(resident || "Future Resident")}
+        </td>
+      </tr>
+
+      <tr>
+        <td
+          style="
+            font-weight:600;
+            color:#6b7280;
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          Subject
+        </td>
+
+        <td
+          style="
+            border-bottom:1px solid #e5e7eb;
+          "
+        >
+          ${escapeHtml(subject || "General Inquiry")}
+        </td>
+      </tr>
+
+      <tr>
+        <td
+          style="
+            font-weight:600;
+            color:#6b7280;
+          "
+        >
+          Submitted On
+        </td>
+
+        <td>
+          ${escapeHtml(cstTime)}
+        </td>
+      </tr>
+
+    </table>
+
+    <!-- Message -->
+
+    <div style="margin-top:30px;">
+
+      <h3
+        style="
+          margin-bottom:12px;
+          color:#111827;
+          font-size:20px;
+        "
+      >
+        Message
+      </h3>
+
+      <div
+        style="
+          background:#f9fafb;
+          border:1px solid #e5e7eb;
+          border-radius:10px;
+          padding:20px;
+          color:#374151;
+          line-height:1.8;
+          white-space:pre-wrap;
+        "
+      >
+        ${escapeHtml(message)}
+      </div>
+
+    </div>
+
+    <!-- Reply Button -->
+
+    <div
+      style="
+        margin-top:30px;
+        text-align:center;
+      "
+    >
+      <a
+        href="mailto:${escapeHtml(email)}"
+        style="
+          display:inline-block;
+          background:#1E3872;
+          color:#ffffff;
+          text-decoration:none;
+          padding:14px 28px;
+          border-radius:8px;
+          font-weight:600;
+        "
+      >
+        Reply to ${escapeHtml(resident || "Future Resident")}
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+
+  <div
+    style="
+      background:#111827;
+      padding:24px;
+      text-align:center;
+      color:#9ca3af;
+      font-size:13px;
+    "
+  >
+
+    <div
+      style="
+        color:#ffffff;
+        font-size:18px;
+        font-weight:700;
+      "
+    >
+       ${escapeHtml(siteConfig.name)}
+    </div>
+
+    <div style="margin-top:8px;">
+      ${escapeHtml(siteConfig.address)}
+    </div>
+
+    <div style="margin-top:6px;">
+      Phone: ${escapeHtml(siteConfig.phone)}
+    </div>
+
+    <div style="margin-top:6px;">
+      Email: ${escapeHtml(siteConfig.email)}
+    </div>
+
+    <div style="margin-top:15px;">
+      This email was automatically generated
+      from  ${escapeHtml(siteConfig.name)} website contact form.
+    </div>
+
+    <div style="margin-top:10px;">
+       &copy; ${new Date().getFullYear()}
+      ${escapeHtml(siteConfig.name)}. All Rights Reserved.
+    </div>
+
+  </div>
+`,
     });
 
     return NextResponse.json(
