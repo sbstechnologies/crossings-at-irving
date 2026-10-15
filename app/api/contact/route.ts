@@ -478,7 +478,7 @@ export async function POST(request: Request) {
         opacity:0.9;
       "
     >
-        A new inquiry has been received from the website - ${escapeHtml(siteConfig.website)} 
+        A new inquiry has been received from the property website - ${escapeHtml(siteConfig.name)} 
    
     </p>
   </div>
