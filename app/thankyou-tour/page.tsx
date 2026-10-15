@@ -119,7 +119,7 @@ export default function Contact() {
 
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="mt-1 inline-block break-all text-[16px] font-semibold text-[#163c84] transition-colors duration-300 hover:text-[#0f2f6b]"
+                      className="mt-1 inline-block break-all text-[14px] font-semibold text-[#163c84] transition-colors duration-300 hover:text-[#0f2f6b]"
                     >
                       {siteConfig.email}
                     </a>

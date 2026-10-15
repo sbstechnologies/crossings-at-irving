@@ -114,7 +114,7 @@ export default function Contact() {
                     </p>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="mt-1 inline-block break-all text-[16px] font-semibold text-[#163c84] transition-colors duration-300 hover:text-[#0f2f6b]  hover:translate-x-0.5"
+                      className="mt-1 inline-block break-all text-[14px] font-semibold text-[#163c84] transition-colors duration-300 hover:text-[#0f2f6b]  hover:translate-x-0.5"
                     >
                       {siteConfig.email}
                     </a>{" "}
@@ -222,8 +222,6 @@ export default function Contact() {
         title={lookLeaseOffer.title}
         subtext={lookLeaseOffer.subtext}
         highlight={lookLeaseOffer.highlight}
-        highlight_text={lookLeaseOffer.highlight_text}
-        suffix={lookLeaseOffer.suffix}
         buttonText={lookLeaseOffer.buttonText}
         buttonHref={lookLeaseOffer.buttonHref}
       />
