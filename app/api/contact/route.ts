@@ -436,10 +436,10 @@ export async function POST(request: Request) {
       to: toRecipients.join(", "),
       cc: ccRecipients.length ? ccRecipients.join(", ") : undefined,
       replyTo: email,
-      subject: `Contact Form - ${subject?.trim() || "General Inquiry"}`,
+      subject: `${escapeHtml(siteConfig.name)} Contact Form - ${subject?.trim() || "General Inquiry"}`,
       text: [
         "New Contact Form Submission",
-        "Crossings at Irving",
+        `${escapeHtml(siteConfig.name)}`,
         "",
         `Full Name: ${fullName}`,
         `Email: ${email}`,
@@ -468,7 +468,7 @@ export async function POST(request: Request) {
         font-weight:700;
       "
     >
-      New Contact Form Submission
+      ${escapeHtml(siteConfig.name)} - New Contact Form Submission
     </h1>
 
     <p
