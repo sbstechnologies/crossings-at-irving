@@ -281,7 +281,6 @@ export default function SendMessage() {
                 className={`${inputClassName} resize-none`}
               />
             </div>
-
             <div className="w-full min-w-0">
               {turnstileSiteKey ? (
                 <div className="flex w-full min-w-0 justify-start overflow-hidden">
@@ -310,7 +309,6 @@ export default function SendMessage() {
                 </p>
               )}
             </div>
-
             <p className="text-justify text-[13px] leading-5 text-gray-500">
               By providing your phone number, you agree to receive text messages
               from Crossings at Irving regarding leasing and maintenance.
@@ -335,8 +333,10 @@ export default function SendMessage() {
             >
               {loading ? "Sending Message..." : "→ Submit Message"}
             </button>
-            <p className="text-center text-[12px] text-[#9aa3b2] md:text-[12px]">
-              We respond to all inquiries within 1 business day.{" "}
+
+            <p className="flex flex-col items-center justify-center gap-1 text-center text-[11px] leading-5 text-[#9aa3b2] xs:text-xs sm:flex-row sm:flex-wrap sm:gap-2 sm:text-[13px] md:text-sm lg:text-sm xl:text-base 2xl:text-base">
+              <span>We respond to all inquiries within 1 business day.</span>
+
               <a
                 href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}
                 className="font-semibold text-gray-600 transition-colors hover:text-gray-900"
