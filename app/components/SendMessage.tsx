@@ -161,7 +161,6 @@ export default function SendMessage() {
                 autoComplete="off"
               />
             </div>
-
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               <div>
                 <label
@@ -201,7 +200,6 @@ export default function SendMessage() {
                 />
               </div>
             </div>
-
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               <div>
                 <label
@@ -266,7 +264,6 @@ export default function SendMessage() {
                 </select>
               </div>
             </div>
-
             <div>
               <label
                 htmlFor="message"
@@ -285,21 +282,26 @@ export default function SendMessage() {
               />
             </div>
 
-            <div>
+            <div className="w-full max-w-full overflow-hidden">
               {turnstileSiteKey ? (
-                <Turnstile
-                  key={turnstileResetKey}
-                  siteKey={turnstileSiteKey}
-                  options={{ theme: "light", size: "flexible" }}
-                  onSuccess={setTurnstileToken}
-                  onExpire={() => setTurnstileToken("")}
-                  onError={() => {
-                    setTurnstileToken("");
-                    toast.error(
-                      "Security verification failed. Please try again.",
-                    );
-                  }}
-                />
+                <div className="w-full max-w-full">
+                  <Turnstile
+                    key={turnstileResetKey}
+                    siteKey={turnstileSiteKey}
+                    options={{
+                      theme: "light",
+                      size: "flexible",
+                    }}
+                    onSuccess={setTurnstileToken}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => {
+                      setTurnstileToken("");
+                      toast.error(
+                        "Security verification failed. Please try again.",
+                      );
+                    }}
+                  />
+                </div>
               ) : (
                 <p className="text-sm text-red-600">
                   Security verification is temporarily unavailable.
@@ -320,7 +322,6 @@ export default function SendMessage() {
               </Link>
               .
             </p>
-
             <button
               type="submit"
               disabled={loading || !turnstileToken || !turnstileSiteKey}
@@ -332,7 +333,6 @@ export default function SendMessage() {
             >
               {loading ? "Sending Message..." : "→ Submit Message"}
             </button>
-
             <p className="text-center text-[12px] text-[#9aa3b2] md:text-[13px]">
               We respond to all inquiries within 1 business day.{" "}
               <a

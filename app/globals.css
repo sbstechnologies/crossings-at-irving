@@ -181,3 +181,20 @@ textarea::placeholder {
     transition-duration: 0.01ms !important;
   }
 }
+
+.cf-turnstile {
+  width: 100%;
+  max-width: 100%;
+}
+
+.cf-turnstile iframe {
+  max-width: 100%;
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .cf-turnstile {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}

@@ -166,14 +166,12 @@ export default function Contact() {
             </div>
 
             {/* MAP */}
-            <div className="overflow-hidden rounded-[24px] border border-[#cfd6e2] bg-white shadow-sm">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl lg:aspect-[16/8]">
+            <div className="overflow-hidden rounded-3xl border border-[#cfd6e2] bg-white shadow-sm">
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl lg:aspect-16/8">
                 <iframe
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(
-                    `Crossings at Irving, ${siteConfig.address}`,
-                  )}&output=embed`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(`Crossings at Irving, ${siteConfig.address}`)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
                   title="Crossings at Irving location map"
-                  className="h-[350px] w-full border-0 md:h-[450px]"
+                  className="block h-[300px] w-full border-0 sm:h-[350px] md:h-[450px] lg:h-[500px]"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -185,7 +183,7 @@ export default function Contact() {
                   <div className="mt-1 text-xl text-[#1E3872]">
                     <MapPin
                       size={16}
-                      className="shrink-0 mt-[2px] text-[#1E3872]"
+                      className="shrink-0 mt-0.5 text-[#1E3872]"
                       strokeWidth={2}
                     />
                   </div>

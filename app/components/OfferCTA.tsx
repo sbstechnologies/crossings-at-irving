@@ -28,7 +28,7 @@ export default function OfferCTA({
             {title}
           </h2>
 
-          <p className="mt-3 max-w-[900px] font-[Plus_Jakarta_Sans] text-[17px] leading-relaxed text-white md:text-[18px]">
+          <p className="mt-3 max-w-225 font-[Plus_Jakarta_Sans] text-[15px] leading-relaxed text-white md:text-[18px]">
             {subtext}
             {highlight && (
               <span className="block mt-2 font-bold text-[#f5f2ed]">
@@ -37,12 +37,25 @@ export default function OfferCTA({
             )}
           </p>
         </div>
-
         {/* BUTTON */}
-        <div className="shrink-0">
+
+        <div className="w-full shrink-0 sm:w-auto">
           <a
             href={buttonHref}
-            className="inline-flex items-center justify-center rounded-[20px] bg-[#1a3a70] px-8 py-4 font-[Plus_Jakarta_Sans] text-sm font-semibold tracking-wide text-white shadow-[0_6px_20px_rgba(0,0,0,0.3)] transition-all duration-200 hover:scale-[1.02] hover:bg-[#132b54] active:scale-[0.98]"
+            className="
+      inline-flex w-full items-center justify-center
+      rounded-[20px]
+      bg-[#1a3a70]
+      px-5 py-3
+      text-center
+      font-[Plus_Jakarta_Sans]
+      text-sm font-semibold tracking-wide text-white
+      shadow-[0_6px_20px_rgba(0,0,0,0.3)]
+      transition-all duration-200
+      hover:scale-[1.02] hover:bg-[#132b54]
+      active:scale-[0.98]
+      sm:w-auto sm:px-8 sm:py-4
+    "
           >
             {buttonText}
           </a>
