@@ -282,28 +282,30 @@ export default function SendMessage() {
               />
             </div>
 
-            <div className="w-full max-w-full overflow-hidden">
+            <div className="w-full min-w-0">
               {turnstileSiteKey ? (
-                <div className="w-full max-w-full">
-                  <Turnstile
-                    key={turnstileResetKey}
-                    siteKey={turnstileSiteKey}
-                    options={{
-                      theme: "light",
-                      size: "flexible",
-                    }}
-                    onSuccess={setTurnstileToken}
-                    onExpire={() => setTurnstileToken("")}
-                    onError={() => {
-                      setTurnstileToken("");
-                      toast.error(
-                        "Security verification failed. Please try again.",
-                      );
-                    }}
-                  />
+                <div className="flex w-full min-w-0 justify-start overflow-hidden">
+                  <div className="w-full min-w-0">
+                    <Turnstile
+                      key={turnstileResetKey}
+                      siteKey={turnstileSiteKey}
+                      options={{
+                        theme: "light",
+                        size: "flexible",
+                      }}
+                      onSuccess={setTurnstileToken}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => {
+                        setTurnstileToken("");
+                        toast.error(
+                          "Security verification failed. Please try again.",
+                        );
+                      }}
+                    />
+                  </div>
                 </div>
               ) : (
-                <p className="text-sm text-red-600">
+                <p className="text-sm leading-5 text-red-600">
                   Security verification is temporarily unavailable.
                 </p>
               )}

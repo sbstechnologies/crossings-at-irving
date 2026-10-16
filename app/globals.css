@@ -187,14 +187,14 @@ textarea::placeholder {
   max-width: 100%;
 }
 
+/* Prevent iframe overflow */
 .cf-turnstile iframe {
   max-width: 100%;
 }
 
-/* Mobile devices */
-@media (max-width: 480px) {
+/* Small mobile screens */
+@media (max-width: 360px) {
   .cf-turnstile {
     max-width: 100%;
-    overflow: hidden;
   }
 }
