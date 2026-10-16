@@ -9,6 +9,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 import SendMessage from "@/app/components/SendMessage";
 import OfferCTA from "@/app/components/OfferCTA";
+import { a } from "framer-motion/client";
 
 export default function Contact() {
   return (
@@ -159,56 +160,63 @@ export default function Contact() {
                   </div>
 
                   <p className="pt-2 text-[14px] text-[#4b5563]">
-                    Languages: English & Spanish
+                    <span className="font-semibold text-[#1f2937]">
+                      Languages:{" "}
+                    </span>
+                    English & Spanish
                   </p>
                 </div>
               </div>
             </div>
 
             {/* MAP */}
-            <div className="overflow-hidden rounded-3xl border border-[#cfd6e2] bg-white shadow-sm">
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl lg:aspect-16/8">
+            <section className="min-w-0 overflow-hidden rounded-2xl border border-[#cfd6e2] bg-white shadow-sm sm:rounded-3xl">
+              {" "}
+              {/* RESPONSIVE MAP */}{" "}
+              <div className="relative h-[240px] w-full overflow-hidden sm:h-[320px] md:h-[380px] lg:h-[420px]">
+                {" "}
                 <iframe
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(`Crossings at Irving, ${siteConfig.address}`)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
                   title="Crossings at Irving location map"
-                  className="block h-[300px] w-full border-0 sm:h-[350px] md:h-[450px] lg:h-[500px]"
+                  className="absolute inset-0 block h-full w-full border-0"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
-
-              <div className="flex items-center justify-between px-4 py-4">
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 text-xl text-[#1E3872]">
-                    <MapPin
-                      size={16}
-                      className="shrink-0 mt-0.5 text-[#1E3872]"
-                      strokeWidth={2}
-                    />
-                  </div>
-
-                  <div>
-                    <h3 className="text-[18px] font-semibold text-[#1f2937]">
-                      Crossings at Irving
-                    </h3>
-
-                    <p className="mt-1 text-[12px] leading-[1.6] text-[#4b5563]">
-                      {siteConfig.address}
-                    </p>
-                  </div>
-                </div>
-
+                />{" "}
+              </div>{" "}
+              {/* MAP DETAILS */}{" "}
+              <div className="flex flex-col gap-4 p-4 sm:p-5 md:flex-row md:items-center md:justify-between">
+                {" "}
+                <div className="flex min-w-0 items-start gap-3">
+                  {" "}
+                  <MapPin
+                    size={19}
+                    className="mt-1 shrink-0 text-[#1E3872]"
+                    strokeWidth={2}
+                  />{" "}
+                  <div className="min-w-0 flex-1">
+                    {" "}
+                    <h3 className="text-base font-semibold leading-6 text-[#1f2937] sm:text-lg">
+                      {" "}
+                      Crossings at Irving{" "}
+                    </h3>{" "}
+                    <p className="mt-1 break-words text-xs leading-5 text-[#4b5563] sm:text-sm">
+                      {" "}
+                      {siteConfig.address}{" "}
+                    </p>{" "}
+                  </div>{" "}
+                </div>{" "}
                 <a
                   href="https://maps.app.goo.gl/MmCPanJEJbhYUTTf7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#1E3872] px-4 py-2 text-[13px] font-semibold text-center text-white transition hover:bg-[#162c5a]"
+                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-full bg-[#1E3872] px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#162c5a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E3872] focus-visible:ring-offset-2 md:w-auto"
                 >
-                  Open Map
-                </a>
-              </div>
-            </div>
+                  {" "}
+                  Open Map{" "}
+                </a>{" "}
+              </div>{" "}
+            </section>
           </div>
           <SendMessage />
         </div>
