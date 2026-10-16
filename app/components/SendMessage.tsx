@@ -17,6 +17,10 @@ export default function SendMessage() {
 
   const [loading, setLoading] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const hasEmailInput = email.trim().length > 0;
+  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
@@ -103,6 +107,7 @@ export default function SendMessage() {
 
       toast.success("Your message has been sent successfully!");
       form.reset();
+      setEmail("");
       setTurnstileToken("");
       setTurnstileResetKey((key) => key + 1);
 
@@ -136,7 +141,7 @@ export default function SendMessage() {
       <div className="overflow-hidden rounded-[26px] border border-[#e4e1db] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
         <div className="h-1 w-full bg-linear-to-r from-[#1E3872] to-[#E39B2D]" />
 
-        <div className="p-6 md:p-10 lg:p-12 xl:p-12 xxl:p-20">
+        <div className="p-4 sm:p-6 md:p-10 lg:p-12">
           <h2 className="font-[Instrument_Serif] text-[30px] leading-[1.1] text-[#1f2937] md:text-[40px]">
             Send Us a Message
           </h2>
@@ -150,7 +155,7 @@ export default function SendMessage() {
             {/* Honeypot field: real visitors should leave this empty. */}
             <div
               aria-hidden="true"
-              className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+              className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden"
             >
               <label htmlFor="website">Leave this field empty</label>
               <input
@@ -188,16 +193,83 @@ export default function SendMessage() {
                 >
                   EMAIL ADDRESS *
                 </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Your Email Address"
-                  required
-                  disabled={loading}
-                  autoComplete="email"
-                  className={inputClassName}
-                />
+                <div className="relative">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Your Email Address"
+                    required
+                    disabled={loading}
+                    autoComplete="email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    aria-invalid={hasEmailInput && !isEmailValid}
+                    aria-describedby={
+                      hasEmailInput ? "email-feedback" : undefined
+                    }
+                    className={`${inputClassName} pr-11 ${
+                      isEmailValid
+                        ? "border-green-600 focus:border-green-600"
+                        : hasEmailInput
+                          ? "border-red-500 focus:border-red-500"
+                          : ""
+                    }`}
+                  />
+
+                  {hasEmailInput && (
+                    <span
+                      className={`pointer-events-none absolute inset-y-0 right-3 flex items-center ${
+                        isEmailValid ? "text-green-600" : "text-red-500"
+                      }`}
+                      aria-hidden="true"
+                    >
+                      {isEmailValid ? (
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          className="h-5 w-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m5 12 4 4L19 6"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          className="h-5 w-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M12 9v4m0 4h.01M10.3 3.86 1.82 18.14A2 2 0 0 0 3.53 21h16.94a2 2 0 0 0 1.71-2.86L13.7 3.86a2 2 0 0 0-3.4 0Z"
+                          />
+                        </svg>
+                      )}
+                    </span>
+                  )}
+                </div>
+
+                {hasEmailInput && (
+                  <p
+                    id="email-feedback"
+                    className={`mt-1 text-xs ${
+                      isEmailValid ? "text-green-600" : "text-red-600"
+                    }`}
+                    aria-live="polite"
+                  >
+                    {isEmailValid
+                      ? "Email format looks valid."
+                      : "Please enter a valid email address."}
+                  </p>
+                )}
               </div>
             </div>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -334,7 +406,7 @@ export default function SendMessage() {
               {loading ? "Sending Message..." : "→ Submit Message"}
             </button>
 
-            <p className="flex flex-col items-center justify-center gap-1 text-center text-[11px] leading-5 text-[#9aa3b2] xs:text-xs sm:flex-row sm:flex-wrap sm:gap-2 sm:text-[13px] md:text-sm lg:text-sm xl:text-base 2xl:text-base">
+            <p className="flex flex-col items-center justify-center gap-1 text-center text-[11px] leading-5 text-[#9aa3b2] sm:flex-row sm:flex-wrap sm:gap-2 sm:text-[13px] md:text-sm lg:text-sm xl:text-base 2xl:text-base">
               <span>We respond to all inquiries within 1 business day.</span>
 
               <a
