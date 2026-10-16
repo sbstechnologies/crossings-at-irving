@@ -134,7 +134,7 @@ export default function SendMessage() {
   return (
     <>
       <div className="overflow-hidden rounded-[26px] border border-[#e4e1db] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-        <div className="h-1 w-full bg-gradient-to-r from-[#1E3872] to-[#E39B2D]" />
+        <div className="h-1 w-full bg-linear-to-r from-[#1E3872] to-[#E39B2D]" />
 
         <div className="p-6 md:p-10 lg:p-12 xl:p-12 xxl:p-20">
           <h2 className="font-[Instrument_Serif] text-[30px] leading-[1.1] text-[#1f2937] md:text-[40px]">
@@ -335,7 +335,7 @@ export default function SendMessage() {
             >
               {loading ? "Sending Message..." : "→ Submit Message"}
             </button>
-            <p className="text-center text-[12px] text-[#9aa3b2] md:text-[13px]">
+            <p className="text-center text-[12px] text-[#9aa3b2] md:text-[12px]">
               We respond to all inquiries within 1 business day.{" "}
               <a
                 href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}

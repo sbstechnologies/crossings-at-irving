@@ -28,7 +28,7 @@ export default function OfferCTA({
             {title}
           </h2>
 
-          <p className="mt-3 max-w-225 font-[Plus_Jakarta_Sans] text-[15px] leading-relaxed text-white md:text-[18px]">
+          <p className="mt-3 max-w-225 font-[Plus_Jakarta_Sans] text-[14px] leading-relaxed text-white md:text-[14px]">
             {subtext}
             {highlight && (
               <span className="block mt-2 font-bold text-[#f5f2ed]">

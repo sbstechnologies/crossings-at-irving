@@ -200,7 +200,7 @@ export default function Contact() {
                       {" "}
                       Crossings at Irving{" "}
                     </h3>{" "}
-                    <p className="mt-1 break-words text-xs leading-5 text-[#4b5563] sm:text-sm">
+                    <p className="mt-1 wrap-break-word text-xs leading-5 text-[#4b5563] sm:text-sm">
                       {" "}
                       {siteConfig.address}{" "}
                     </p>{" "}
