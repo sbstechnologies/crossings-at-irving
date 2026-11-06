@@ -26,7 +26,7 @@ export const siteConfig = {
 export const lookLeaseSpecial = {
   id: "look",
   badge: "LOOK & LEASE SPECIAL",
-  text: "1-Month Free! + $100 Off On All Floor Plans! Move-In by October 31, 2026. 1BR from $999 | 2BR from $1,325",
+  text: "1-Month Free! + $100 Off On All Floor Plans! Move-In by November 30, 2026. 1BR from $999 | 2BR from $1,325",
 };
 
 export const floorPlansSpecial = {
@@ -48,7 +48,7 @@ export const lookLeaseOffer = {
   title: "Look & Lease Special",
   subtext: "1-Month Free! + $100 Off On All Floor Plans!",
   highlight: "1-Bedrooms Starting at $999 | 2-Bedrooms Starting at $1,325",
-  suffix: "Must Move-In By October 31,2026!",
+  suffix: "Must Move-In By November 30,2026!",
   buttonText: "Call Now: (972) 457-0421",
   buttonHref: "tel:+19724570421",
 };
@@ -75,7 +75,7 @@ export const PromoCardWidgetConfig = {
       text: "Call us right now for details.",
       highlight: "1-Bedroom starting at $999",
       highlight_text: "2-Bedrooms starting at $1,325",
-      suffix: "Must move-in by October 31,2026.",
+      suffix: "Must move-in by November 30,2026.",
       theme: "blue",
     },
   ],
